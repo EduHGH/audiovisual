@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Panel de sonidos</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light;
+--bg:#eef1f4;--ink:#121a23;--mute:#5d6b79;--line:#c9d2db;--soft:#e0e6ec;--acc:#2f3fe8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0e141b;--ink:#e8eef4;--mute:#93a2b1;--line:#26313c;--soft:#18212b;--acc:#8c98ff}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0e141b;--ink:#e8eef4;--mute:#93a2b1;--line:#26313c;--soft:#18212b;--acc:#8c98ff}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Bricolage Grotesque",system-ui,sans-serif}
+main{max-width:860px;margin:0 auto;padding:clamp(16px,4vw,40px)}
+h1{font-size:clamp(1.7rem,4.5vw,2.6rem);line-height:1.05;font-weight:800;letter-spacing:-.02em;margin:0 0 6px}
+.note{color:var(--mute);margin:0 0 20px}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.deck{--cols:5;display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));gap:clamp(8px,1.6vw,16px);background:#151b22;border:1px solid #2a3440;border-radius:24px;padding:clamp(12px,2.4vw,24px)}
+body.over .deck{outline:3px dashed var(--acc);outline-offset:4px}
+.key,.slot{aspect-ratio:1;border-radius:14px;min-width:0}
+.key{position:relative;overflow:hidden;border:0;padding:8px;display:flex;align-items:flex-end;text-align:left;color:#fff;cursor:pointer;
+font:600 clamp(.72rem,1.7vw,.95rem)/1.15 inherit;background:hsl(var(--h) 52% 34%);
+box-shadow:inset 0 0 0 1px rgb(255 255 255/.14),0 4px 0 hsl(var(--h) 52% 20%);transition:transform .08s,box-shadow .08s}
+.key:active,.key.hit{transform:translateY(3px);box-shadow:inset 0 0 0 1px rgb(255 255 255/.14),0 1px 0 hsl(var(--h) 52% 20%)}
+.key.on{outline:3px solid #fff;outline-offset:2px}
+.key.bad{opacity:.45}
+.nm{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere;padding-bottom:6px}
+kbd{position:absolute;top:6px;left:6px;font:600 .7rem/1 "Bricolage Grotesque",system-ui,sans-serif;padding:3px 5px;border-radius:5px;background:rgb(0 0 0/.35)}
+kbd:empty{display:none}
+.pg{position:absolute;left:0;right:0;bottom:0;height:5px;background:rgb(255 255 255/.9);transform-origin:left;transform:scaleX(var(--p,0))}
+.x{display:none;position:absolute;top:6px;right:6px;width:22px;height:22px;border-radius:50%;background:#e5484d;place-items:center;font-size:1rem;line-height:1}
+.edit .x{display:grid}
+.slot{border:2px dashed #34414e;background:transparent}
+.add{color:#9fb0c0;font:400 2.2rem/1 inherit;cursor:pointer;border-color:#4b5b6b}
+.add:hover{border-color:#8c98ff;color:#8c98ff}
+.bar{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;margin-top:24px;color:var(--mute);font-size:.92rem}
+.bar label{display:flex;align-items:center;gap:8px}
+.btn{font:inherit;color:var(--ink);background:none;border:1px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer}
+.btn:hover{background:var(--soft)}
+.btn:disabled{opacity:.4;cursor:default}
+.btn[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+select{font:inherit;color:var(--ink);background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:4px 6px}
+input[type=range],input[type=checkbox]{accent-color:var(--acc)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+#msg{margin:16px 0 0;min-height:1.5em}
+@media (prefers-reduced-motion:reduce){.key{transition:none}}
+</style>
+</head>
+<body>
+<main>
+  <h1>Panel de sonidos</h1>
+  <p class="note">Sube tus audios y cada uno tendrá su botón. Púlsalo o usa la letra de su esquina; Esc lo detiene todo.</p>
+  <div class="deck" id="deck"></div>
+  <div class="bar">
+    <button class="btn" id="addb">Añadir audios</button>
+    <button class="btn" id="stop">Detener todo</button>
+    <button class="btn" id="edit" aria-pressed="false">Quitar audios</button>
+    <label>Volumen <input type="range" id="vol" min="0" max="1" step="0.01" value="1"></label>
+    <label>Al pulsar <select id="mode"><option value="restart">Reiniciar el sonido</option><option value="toggle">Alternar reproducir y parar</option></select></label>
+    <label><input type="checkbox" id="solo"> Un sonido a la vez</label>
+  </div>
+  <input type="file" id="file" class="vh" accept="audio/*" multiple tabindex="-1" aria-hidden="true">
+  <p id="msg" class="note" role="status"></p>
+</main>
+<script>
+const $=s=>document.querySelector(s);
+const SC='1234567890qwertyuiopasdfghjklzxcvbnm';
+let list=[],seq=0,vol=1,mode='restart',solo=false,edit=false,raf=0,lastC=0;
+const say=t=>{$('#msg').textContent=t};
+const ok=f=>f.type.startsWith('audio/')||/\.(mp3|wav|ogg|oga|m4a|aac|flac|opus|weba)$/i.test(f.name);
+const colsNow=()=>innerWidth>720?5:innerWidth>460?4:3;
+
+function add(files){
+  let bad=0;
+  for(const f of files){
+    if(!ok(f)){bad++;continue}
+    const url=URL.createObjectURL(f),a=new Audio(url);
+    a.preload='auto';a.volume=vol;
+    const it={f,url,a,name:f.name.replace(/\.[^.]+$/,''),h:(seq++*53+210)%360};
+    a.onplay=a.onpause=kick;a.onerror=()=>fallback(it);
+    list.push(it);
+  }
+  say(bad?bad+(bad>1?' archivos no parecen de audio y se han ignorado.':' archivo no parece de audio y se ha ignorado.'):'');
+  render();
+}
+function fallback(it){
+  if(it.tried||it.f.size>80e6){it.bad=1;say('No se puede reproducir «'+it.name+'». Prueba con MP3, WAV, OGG o M4A.');render();return}
+  it.tried=1;const r=new FileReader();
+  r.onload=()=>{it.a.src=r.result};r.readAsDataURL(it.f);
+}
+function render(){
+  const n=list.length;
+  if(!n&&edit){edit=false;$('#edit').setAttribute('aria-pressed','false')}
+  const C=lastC=colsNow(),total=Math.max(3*C,Math.ceil((n+1)/C)*C),dk=$('#deck');
+  dk.style.setProperty('--cols',C);dk.classList.toggle('edit',edit);dk.textContent='';
+  for(let i=0;i<total;i++){
+    let b;
+    if(i<n){
+      const it=list[i];b=document.createElement('button');
+      b.className='key'+(it.bad?' bad':'');b.style.setProperty('--h',it.h);
+      b.innerHTML='<kbd></kbd><span class="nm"></span><i class="pg"></i><b class="x" aria-hidden="true">×</b>';
+      b.children[0].textContent=(SC[i]||'').toUpperCase();b.children[1].textContent=it.name;
+      b.setAttribute('aria-label',(edit?'Quitar ':'Reproducir ')+it.name);b.title=it.name;
+      b.onclick=()=>press(i);it.el=b;
+    }else if(i===n){
+      b=document.createElement('button');b.className='slot add';b.textContent='+';
+      b.setAttribute('aria-label','Añadir audios');b.onclick=()=>$('#file').click();
+    }else{
+      b=document.createElement('div');b.className='slot';b.setAttribute('aria-hidden','true');
+    }
+    dk.append(b);
+  }
+  $('#stop').disabled=$('#edit').disabled=!n;
+  kick();
+}
+function press(i){
+  const it=list[i];if(!it)return;
+  if(edit){rm(i);return}
+  if(it.bad){say('Este audio no se puede reproducir en tu navegador.');return}
+  const a=it.a;
+  if(mode==='toggle'&&!a.paused){a.pause();a.currentTime=0;kick();return}
+  if(solo)for(const o of list)if(o!==it&&!o.a.paused){o.a.pause();o.a.currentTime=0}
+  a.currentTime=0;
+  a.play().catch(e=>{if(e.name!=='AbortError')say('El navegador no pudo reproducir «'+it.name+'».')});
+  kick();
+}
+function rm(i){
+  const it=list[i];
+  it.a.onerror=null;it.a.pause();it.a.removeAttribute('src');it.a.load();
+  URL.revokeObjectURL(it.url);list.splice(i,1);render();
+}
+function stopAll(){for(const o of list){o.a.pause();o.a.currentTime=0}kick()}
+function tick(){
+  let any=false;
+  for(const it of list){
+    const p=!it.a.paused;if(p)any=true;
+    if(it.el){it.el.classList.toggle('on',p);it.el.style.setProperty('--p',p&&it.a.duration?it.a.currentTime/it.a.duration:0)}
+  }
+  if(any)raf=requestAnimationFrame(tick);
+}
+function kick(){cancelAnimationFrame(raf);tick()}
+
+$('#file').onchange=e=>{add(e.target.files);e.target.value=''};
+$('#addb').onclick=()=>$('#file').click();
+$('#stop').onclick=stopAll;
+$('#edit').onclick=e=>{edit=!edit;e.currentTarget.setAttribute('aria-pressed',edit);say(edit?'Modo quitar: pulsa un botón para eliminarlo.':'');render()};
+$('#vol').oninput=e=>{vol=+e.target.value;for(const o of list)o.a.volume=vol};
+$('#mode').onchange=e=>{mode=e.target.value};
+$('#solo').onchange=e=>{solo=e.target.checked};
+
+addEventListener('dragover',e=>{e.preventDefault();document.body.classList.add('over')});
+addEventListener('dragleave',e=>{if(!e.relatedTarget)document.body.classList.remove('over')});
+addEventListener('drop',e=>{e.preventDefault();document.body.classList.remove('over');add(e.dataTransfer.files)});
+addEventListener('keydown',e=>{
+  if(e.repeat||e.ctrlKey||e.metaKey||e.altKey||/^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName))return;
+  if(e.key==='Escape'){stopAll();return}
+  if(e.key.length!==1)return;
+  const i=SC.indexOf(e.key.toLowerCase());
+  if(i>=0&&list[i]){
+    e.preventDefault();press(i);
+    const el=list[i]&&list[i].el;if(el){el.classList.add('hit');setTimeout(()=>el.classList.remove('hit'),120)}
+  }
+});
+addEventListener('resize',()=>{if(colsNow()!==lastC)render()});
+render();
+</script>
+</body>
+</html>
