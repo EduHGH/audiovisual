@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verdad o Cuento: el juicio de Arcada</title>
+<style>
+:root{
+  color-scheme:light dark;
+  --bg:#F1F3F8; --fg:#1A1F2E; --muted:#5A6275; --line:#D5DAE5; --surface:#FFFFFF;
+  --verdad:#12795F; --cuento:#B8203F; --medio:#945C00; --accent:#2B47D9;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0F1219; --fg:#E4E8F2; --muted:#9AA3B8; --line:#272D3D; --surface:#171B26;
+    --verdad:#4FD1A8; --cuento:#FF7A93; --medio:#F0B94A; --accent:#93A5FF;
+  }
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{
+  margin:0; padding:clamp(1.25rem,5vw,3.5rem) clamp(1rem,5vw,2rem) 4rem;
+  color:var(--fg); background:var(--bg);
+  font:1.125rem/1.75 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+}
+main{max-width:40rem; margin:0 auto}
+h1,h2,nav,.meta{font-family:"Avenir Next Condensed","Franklin Gothic Medium","Arial Narrow","Helvetica Neue",Arial,sans-serif}
+
+header{margin-bottom:2.5rem}
+.meta{display:flex; flex-wrap:wrap; gap:.25rem 1.25rem; margin:0 0 1.5rem; color:var(--muted); font-size:1rem}
+h1{margin:0; font-size:clamp(2.5rem,9vw,4.5rem); line-height:.98; font-weight:800; letter-spacing:-.025em}
+h1 .show{display:block; color:var(--accent)}
+.dek{margin:1.25rem 0 0; font:600 clamp(1.25rem,3.5vw,1.6rem)/1.3 "Avenir Next Condensed","Franklin Gothic Medium","Arial Narrow",Arial,sans-serif; color:var(--muted)}
+
+nav ul{display:flex; flex-wrap:wrap; gap:.6rem; margin:1.75rem 0 0; padding:0; list-style:none}
+nav a{
+  display:flex; align-items:baseline; gap:.6rem; padding:.45rem .9rem .45rem .8rem;
+  color:var(--fg); text-decoration:none; font-size:1.05rem; font-weight:600;
+  background:var(--surface); border:1px solid var(--line); border-left:5px solid var(--c); border-radius:4px;
+}
+nav a b{font-size:1.4rem; font-weight:800; font-variant-numeric:tabular-nums; color:var(--c)}
+nav a:hover{border-color:var(--c)}
+a:focus-visible{outline:3px solid var(--accent); outline-offset:3px}
+
+.verdad{--c:var(--verdad)} .cuento{--c:var(--cuento)} .medio{--c:var(--medio)}
+section{margin-top:3rem; scroll-margin-top:1.5rem}
+h2{
+  margin:0 0 1.25rem; padding-top:.75rem; border-top:4px solid var(--c, var(--fg));
+  color:var(--c, var(--fg)); font-size:clamp(1.5rem,4.5vw,2rem); line-height:1.15; font-weight:800; letter-spacing:-.01em;
+}
+p{margin:0 0 1.15rem}
+section[class] p strong{color:var(--c)}
+.cierre{margin-top:2rem; padding-top:1.25rem; border-top:1px solid var(--line); color:var(--muted); font-style:italic}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <p class="meta"><span>@Edu Howler</span> <time datetime="2026-11-04">4 de noviembre de 2026</time></p>
+  <h1><span class="show">Verdad o Cuento:</span> el juicio de Arcada</h1>
+  <p class="dek">Un juicio, tres condenados y una sola broma muy larga</p>
+  <nav aria-label="Secciones">
+    <ul>
+      <li class="verdad"><a href="#verdad">Verdad <b>4</b></a></li>
+      <li class="cuento"><a href="#cuento">Cuento <b>4</b></a></li>
+      <li class="medio"><a href="#medio-cuento">Medio cuento <b>4</b></a></li>
+    </ul>
+  </nav>
+</header>
+
+<p>Señoras y señores, bienvenidos a Verdad o Cuento. Esta semana nos ha tocado el juicio en la sala de vistas de Los Santos, y si algo ha quedado claro es que en San Andreas la justicia a veces no se ajusta. El propio juez, Borja Fiser, de hecho, lo admite en más de una ocasión. La única persona honesta ante los límites de la justicia y las complicaciones de gestionar un show como el que vimos en dicho juicio.</p>
+
+<p>Para quien llegue tarde: la inspectora Melania Montoro visitó Arcada, la agencia de detectives de Rodolfo Mascarpone, Jesusa Montero y Ramón Cazanuecos, vio unas condiciones que a su juicio no pasarían una inspección y anunció que iba a investigar. A partir de ahí, según la parte denunciante, que defendió el letrado Ricardo Guzmán, Mascarpone y Little Poppa convirtieron una emisión de radio en una campaña de difamación sobre su salud y su vida personal, con amenaza incluida. Se pidieron 7.000&nbsp;$ y 7 meses para el primero, y 9.000&nbsp;$ y 9 meses para el segundo. Veamos cuál fue el resultado, cómo las mentiras tergiversaron la realidad de ambas partes.</p>
+
+<section id="verdad" class="verdad">
+  <h2>Lo que es VERDAD: lo que se sostiene, aunque duela</h2>
+  <p><strong>Hubo condena para Mascarpone, Poppa y Montero.</strong> Rodolfo y Little se libraron de la cárcel pero deberán realizar trabajos en beneficio de la comunidad: reparar fachadas, poner tuberías de desagüe y mejorar el cementerio y un lugar etcétera, todo ello con mono de funcionario. Rodolfo Mascarpone y Little Poppa, además, deberán abonar 3.000&nbsp;$ de multa cada uno, aunque hecha la ley, hecha la trampa. Pues si no superan los 100.000 de multas, no están obligados a realizar dicho pago. La acusación pedía 7K, al final, se quedó en 3K. La acusación pidió meses de cárcel y se quedó en trabajo comunitario.</p>
+  <p><strong>Y sin embargo la amenaza perdura. No solo para la inspectora Melania, sino para el resto de ciudadanos que podrían ser las próximas víctimas de ARCADA. Así lo reconoce el propio Little Poppa.</strong> Ante el juez admitió una llamada anónima con voz de asesino y un “te voy a matar”, eso sí, “en plan de broma”. La acusación insistió en que está grabado. En la sala, lejos de alarmarse, a más de uno le entró la risa.</p>
+  <p><strong>Fue un juicio insólito donde el mismo abogado de la defensa se cambió de bando en pleno juicio.</strong> Dijo estar completamente de acuerdo con Melania, aseguró que Rodolfo “lo destroza todo a su alrededor” y anunció que cambiaba de equipo. El juez recordó que algo así no tiene precedentes en la historia del país y pidió que volviera a su lado. Ante el fracaso rotundo de la defensa, el letrado parece que se desmayó, para volver a erguirse unos instantes después.</p>
+  <p><strong>No contentos ante las irregularidades de este juicio. La testigo de la defensa, Jesusa, Chusti, acabó entre los condenados.</strong> Doña Jesús, esposa de Little Poppa y madre, con él, de tres bebés, subió al estrado como testigo y bajó sentenciada: la condena alcanzó a los tres acusados, y no consta que nadie le hubiera anunciado antes de que sería recriminada por un simple testimonio.</p>
+</section>
+
+<section id="cuento" class="cuento">
+  <h2>CUENTO: lo que no cuela ni con tequila</h2>
+  <p><strong>“Una simple broma de chavales.”</strong> La defensa pidió comprensión para unos “chavales”, pero el propio letrado confirmó ante el juez que tenían más de treinta años. Intentó arreglarlo con un supuesto trastorno y la etiqueta de “personas especiales”, y en la sala se le hizo notar, muy finamente, que eso lo estaba declarando él. Además, la broma sufrió inflación: de decir que la inspectora había contagiado una enfermedad a cien personas se pasó a seis mil, con la Policía como fuente y sin que nadie pudiera contrastarlo.</p>
+  <p><strong>“Nuestro único ingreso es una donación de 500 dólares de un cliente.”</strong> Rodolfo defendió ante el juez que era una donación de un cliente y, unos segundos después, explicó que aún no era cliente porque el negocio ni estaba puesto. Una donación de un cliente que no existía a una empresa que todavía no existía: contabilidad creativa de primer nivel. Y cuando llegó la multa de 3.000&nbsp;$, uno de los condenados se declaró insolvente.</p>
+  <p><strong>“Arcada cumple todos los requisitos de higiene y licencias.”</strong> Cuando se preguntó en qué momento sacaron las licencias, la respuesta fue que habían hablado con Winchester y que ella les dijo que podían trabajar con la LSPD. Una licencia verbal. El tribunal dijo que no era el momento de entrar a fondo, así que la insalubridad denunciada sigue por demostrar, pero de la licencia, más allá de la palabra de Winchester, no se ha visto ni un papel.</p>
+  <p><strong>“No sabía que era inspectora.”</strong> Rodolfo sostuvo que Melania no se presentó como tal y, acto seguido, contó que ella entró en su oficina y le anunció que iba a investigar el negocio. Melania aseguró que sí se presentó y que está demostrado; en la sala se recordó que una inspectora no entra a inspeccionar sin dar sus credenciales en la entrada. O sea: no sabía quién era, pero sabía perfectamente a qué venía.</p>
+</section>
+
+<section id="medio-cuento" class="medio">
+  <h2>MEDIO CUENTO: lo que está por demostrar</h2>
+  <p><strong>Primero: El soborno cruzado.</strong> La defensa sostuvo que Melania intentó sobornar a los acusados para que se declararan culpables, con una testigo que vio a los denunciantes llegar a Arcada y ofrecer un documento con una cantidad de dinero que no recuerda ni puede especificar. Melania aseguró lo contrario: que fueron ellos quienes le ofrecieron dinero para ganar el juicio y reintegrarla a la academia. Little Poppa dijo que no ofreció nada. Dos versiones incompatibles, ninguna cifra y un juez al que, textualmente, no le consta.</p>
+  <p><strong>Segundo: Los tres millones y el corazón roto.</strong> Rodolfo explicó que Melania le pidió tres millones por casarse con ella, que él la rechazó y que el dolor de estar enamorado de ella explica la broma de la radio. O sea: la rechazó, la quería y se lo dijo con micrófono. Un argumento de telenovela, sin pruebas pero con mucho guion.</p>
+  <p><strong>Tercero: Las disculpas.</strong> Es verdad que hubo disculpas públicas: Rodolfo se declaró profundamente arrepentido y el juez las tuvo en cuenta para rebajar la condena. Es cuento que cerraran el asunto: según la defensa Melania las aceptó, pero ella terminó el juicio hablando de tomar distancia de esa amistad.</p>
+  <p><strong>Cuarto: “Está grabado.”</strong> La acusación y la defensa invocaron grabaciones: la amenaza, las acusaciones repetidas en la radio, las disculpas aceptadas. En la transcripción no se reproduce ninguna. Es la prueba más citada y menos escuchada de San Andreas.</p>
+  <p>Por último, mención aparte para quién instigó a quién y para los terroristas que supuestamente pagan coches de lujo.</p>
+</section>
+
+<section id="veredicto">
+  <h2>Veredicto: todo el mundo ganó, menos la coherencia</h2>
+  <p>Marcador final de la noche: cuatro verdades, cuatro cuentos y cuatro medios cuentos que el tiempo dirá. A la salida, todos hablaban de victoria y de final feliz, con abrazos entre acusados y denunciantes y una promesa de quedar para tomar café. El juez pidió poner un poco de humanidad en cada condena. Humanidad hubo. Rigor, lo justo. Y coherencia, la justa también.</p>
+  <p class="cierre">Hasta la próxima en Verdad o Cuento, el programa donde casi todo es cuento, salvo las multas de 3.000&nbsp;$ y los trabajos en beneficio de la comunidad.</p>
+</section>
+</main>
+</body>
+</html>
