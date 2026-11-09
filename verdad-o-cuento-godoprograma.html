@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verdad o Cuento · Radio Galaxia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0f3a; --bg2:#141b66; --ink:#eef1ff; --mute:#aab3e6;
+  --blue:#2aa2ff; --verdad:#2ee07a; --medio:#ffc933; --cuento:#ff4a55; --purple:#5a2bd8;
+  --display:'Archivo Black','Arial Black',Impact,sans-serif;
+  --body:'Archivo',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);font:400 1.05rem/1.55 var(--body);
+  background:
+    radial-gradient(900px 500px at 105% -10%,var(--purple),transparent 60%),
+    radial-gradient(700px 500px at -10% 110%,#1a2aa8,transparent 60%),
+    var(--bg);
+  background-attachment:fixed;min-height:100vh;
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px 80px}
+header{padding:44px 0 20px}
+.brand{font:700 .85rem/1 var(--body);letter-spacing:.14em;color:var(--mute);margin:0 0 18px}
+h1{font:italic 400 clamp(2.8rem,10vw,5rem)/.88 var(--display);margin:0 0 22px;letter-spacing:-.01em}
+h2{font:700 clamp(1.4rem,4.6vw,2rem)/1.15 var(--body);margin:0 0 8px;max-width:20ch}
+h2 b{color:var(--blue);font-weight:700}
+.sub{margin:0;color:var(--mute);max-width:46ch}
+
+.board{
+  position:sticky;top:0;z-index:5;margin:18px -20px 22px;padding:12px 20px;
+  background:rgba(10,15,58,.88);backdrop-filter:blur(8px);
+  border-bottom:1px solid #ffffff1f;
+}
+.score{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.pill{display:flex;align-items:baseline;gap:8px;padding:6px 14px;border-radius:999px;background:#ffffff10;border:1px solid #ffffff22;font-weight:600;font-size:.92rem}
+.pill output{font:400 1.5rem/1 var(--display);min-width:1ch}
+.pill.verdad output{color:var(--verdad)} .pill.medio output{color:var(--medio)} .pill.cuento output{color:var(--cuento)}
+.tools{margin-left:auto;display:flex;gap:8px;align-items:center}
+.prog{font-size:.85rem;color:var(--mute);margin-right:6px}
+.tools button{font:600 .88rem var(--body);color:var(--ink);background:transparent;border:1px solid #ffffff44;border-radius:8px;padding:7px 12px;cursor:pointer}
+.tools button:hover{background:#ffffff14}
+button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+
+.card{
+  --c:#ffffff33;
+  margin:0 0 12px;padding:18px 20px;border-radius:14px;
+  background:#ffffff0c;border:1px solid #ffffff1f;border-left:6px solid var(--c);
+}
+.card.verdad{--c:var(--verdad)} .card.medio{--c:var(--medio)} .card.cuento{--c:var(--cuento)}
+.top{display:flex;gap:16px;align-items:flex-start;justify-content:space-between}
+.card h3{font:700 1.2rem/1.25 var(--body);margin:0 0 4px}
+.card .d{margin:0;color:var(--mute);font-size:.98rem}
+.go{
+  flex:none;font:700 .95rem var(--body);color:#0a0f3a;background:var(--blue);
+  border:0;border-radius:10px;padding:10px 16px;cursor:pointer;
+}
+.go:hover{filter:brightness(1.12)}
+.go[disabled]{display:none}
+.res{margin-top:14px;padding-top:14px;border-top:1px dashed #ffffff3a}
+.res[hidden]{display:none}
+.stamp{
+  display:inline-block;font:italic 400 1.5rem/1 var(--display);color:var(--c);
+  border:3px solid var(--c);border-radius:8px;padding:6px 12px;margin:0 0 12px;
+  transform:rotate(-2.5deg);
+}
+.res.in .stamp{animation:stamp .35s cubic-bezier(.2,1.4,.4,1)}
+@keyframes stamp{from{transform:rotate(-2.5deg) scale(1.9);opacity:0}to{transform:rotate(-2.5deg) scale(1);opacity:1}}
+.q{margin:0 0 8px;font-size:.98rem;color:var(--ink)}
+.q small{display:block;color:var(--mute);font-size:.82rem;font-weight:600;margin-bottom:2px}
+.q i{font-style:normal;border-left:3px solid #ffffff44;padding-left:10px;display:block}
+.c{margin:0;font-weight:600;font-size:1.05rem}
+
+#final{margin-top:30px;padding:24px;border-radius:16px;background:linear-gradient(135deg,#ffffff14,#ffffff06);border:1px solid #ffffff2a}
+#final[hidden]{display:none}
+#final h3{font:italic 400 1.9rem/1 var(--display);margin:0 0 14px}
+.bar{display:flex;height:16px;border-radius:8px;overflow:hidden;margin:0 0 6px}
+.bar span{flex:1}
+.bar .a{background:var(--verdad)} .bar .b{background:var(--medio)} .bar .c2{background:var(--cuento)}
+.bar+.cap{font-size:.82rem;color:var(--mute);margin:0 0 16px}
+#final p{margin:0 0 12px;max-width:56ch}
+.close{color:var(--mute);font-style:italic}
+footer{margin-top:34px;color:var(--mute);font-size:.88rem;font-weight:600;letter-spacing:.1em}
+
+@media (max-width:560px){
+  .top{flex-direction:column}
+  .go{width:100%}
+  .tools{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .res.in .stamp{animation:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="brand">RADIO GALAXIA</p>
+    <h1>Verdad o Cuento</h1>
+    <h2>El programa electoral de <b>Godofredo Esmuphy</b></h2>
+    <p class="sub">Doce propuestas del Godograma. Léelas en antena, deja que el público apueste y revela el veredicto.</p>
+  </header>
+
+  <div class="board" role="region" aria-label="Marcador">
+    <div class="score">
+      <div class="pill verdad">Verdades <output id="n-verdad">0</output></div>
+      <div class="pill medio">Medio-cuentos <output id="n-medio">0</output></div>
+      <div class="pill cuento">Cuentos <output id="n-cuento">0</output></div>
+      <div class="tools">
+        <span class="prog" id="prog" aria-live="polite">0 de 12</span>
+        <button id="all" type="button">Revelar todo</button>
+        <button id="reset" type="button">Reiniciar</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="list"></main>
+
+  <section id="final" hidden aria-live="polite">
+    <h3>El veredicto del dial</h3>
+    <div class="bar" aria-hidden="true"><span class="a"></span><span class="b"></span><span class="c2"></span></div>
+    <p class="cap">4 verdades · 4 medio-cuentos · 4 cuentos</p>
+    <p>Cuatro verdades, cuatro medio-cuentos y cuatro cuentos: un 33 % cada uno. El gráfico de la portada decía 20 / 30 / 50, así que el propio gráfico es un medio-cuento.</p>
+    <p class="close">«Dios salve a San Andreas. Y, si puede ser, que también me eche una mano a mí.»</p>
+  </section>
+
+  <footer>RADIO GALAXIA · ¡SEGUIMOS EN SINTONÍA!</footer>
+</div>
+
+<script>
+const LABEL={verdad:'Verdad',medio:'Medio-cuento',cuento:'Cuento'};
+const D=[
+ {t:'Quitar los STOP',d:'Sustituir las señales de STOP por CEDA EL PASO.',v:'verdad',
+  q:'en las intersecciones que se consideren adecuadas… manteniendo la obligación de ceder el paso y extremar las precauciones',
+  c:'Quita la señal, pero te deja el miedo.'},
+ {t:'Departamento de Superhéroes',d:'Un departamento especial que colabora con los cuerpos oficiales.',v:'cuento',
+  q:'con funciones y competencias definidas',
+  c:'El presupuesto da para las capas, pero no para la tintorería de las capas.'},
+ {t:'Transparencia y ruedas de prensa semanales',d:'Cuentas públicas, rueda de prensa, balance y una ley nueva cada semana.',v:'medio',
+  q:'permitir críticas e insultos durante el acto sin que estos, por sí solos, sean motivo de sanción',
+  c:'Más que un gobernador, es un calendario. Y todo depende de ese «por sí solos».'},
+ {t:'Multa negociable',d:'Cambiar la multa por trabajos comunitarios.',v:'verdad',
+  q:'La sustitución deberá ser aprobada por la autoridad competente',
+  c:'Regatear con el agente como en el Rastro, pero con chaleco reflectante incluido.'},
+ {t:'Proyecto Coliseo',d:'Presos con cadena perpetua luchan por su libertad.',v:'cuento',
+  q:'combates contra otros presos o animales salvajes',
+  c:'Lo de «última oportunidad» es lo único honesto de todo el texto.'},
+ {t:'Excepción alcohólica y de sustancias',d:'Excepción a las restricciones de conducción en las noches de fin de semana.',v:'medio',
+  q:'entre las 00:01 y las 02:59',
+  c:'Solo promete «estudiar» la excepción, y con horario de relojero. La cantidad de sustancias se rellenará después.'},
+ {t:'Registro de Condiciones Extraordinarias',d:'Estudio de casos especiales por certificación médica.',v:'verdad',
+  q:'estudio de casos especiales mediante certificación médica',
+  c:'Para ser extraordinario hay que pasar por el médico. La lista acaba en puntos suspensivos, el único punto con final abierto.'},
+ {t:'Operación Nueva América',d:'Declarar la guerra a Estados Unidos.',v:'cuento',
+  q:'anuncio de la intención de declarar la guerra a Estados Unidos',
+  c:'No declara la guerra: la deja en borrador. Y encima pide ser la nueva capital. Estrategia de pareja complicada.'},
+ {t:'Sanidad híbrida',d:'Hospital gratis para quien no tiene antecedentes delictivos.',v:'medio',
+  q:'mantenimiento de las tasas actuales para quienes tengan antecedentes',
+  c:'En San Andreas pesa más el historial penal que el clínico.'},
+ {t:'Amnistía por lectura de derechos',d:'Habeas corpus exprés si no te leyeron los derechos.',v:'verdad',
+  q:'no se impondrá ninguna multa, no se registrará ningún delito y no quedarán antecedentes',
+  c:'Todo tu historial depende de que el agente se sepa un párrafo de memoria.'},
+ {t:'Becas de aviación',d:'Ayudas para obtener el título de aviación.',v:'cuento',
+  q:'ayudas económicas para facilitar la obtención del título de aviación',
+  c:'El programa solo ayuda con el título; lo de «masivas» lo puso Radio Galaxia. El avión lo pones tú.'},
+ {t:'Sin límites de velocidad en autopistas',d:'Eliminar los límites máximos de velocidad.',v:'medio',
+  q:'obligación de mantener el control del vehículo',
+  c:'Corre lo que quieras, pero no te estrelles. El consejo más obvio de la historia legislativa.'}
+];
+
+const $=s=>document.querySelector(s), list=$('#list');
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+
+function build(){
+  list.innerHTML=D.map((p,i)=>`
+    <article class="card" data-i="${i}">
+      <div class="top">
+        <div><h3>${esc(p.t)}</h3><p class="d">${esc(p.d)}</p></div>
+        <button class="go" type="button" aria-expanded="false" aria-controls="r${i}">Revelar veredicto</button>
+      </div>
+      <div class="res" id="r${i}" hidden>
+        <div class="stamp">${LABEL[p.v]}</div>
+        <p class="q"><small>Dice el Godograma</small><i>«${esc(p.q)}»</i></p>
+        <p class="c">${esc(p.c)}</p>
+      </div>
+    </article>`).join('');
+  update();
+}
+
+function reveal(card){
+  const p=D[card.dataset.i], res=card.querySelector('.res'), btn=card.querySelector('.go');
+  if(!res.hidden) return;
+  card.classList.add(p.v);
+  res.hidden=false; res.classList.add('in');
+  btn.disabled=true; btn.setAttribute('aria-expanded','true');
+  update();
+}
+
+function update(){
+  const n={verdad:0,medio:0,cuento:0};
+  let done=0;
+  list.querySelectorAll('.card').forEach(c=>{
+    if(!c.querySelector('.res').hidden){n[D[c.dataset.i].v]++;done++;}
+  });
+  for(const k in n) $('#n-'+k).textContent=n[k];
+  $('#prog').textContent=done+' de '+D.length;
+  $('#final').hidden = done<D.length;
+}
+
+list.addEventListener('click',e=>{
+  const b=e.target.closest('.go'); if(b) reveal(b.closest('.card'));
+});
+$('#all').addEventListener('click',()=>list.querySelectorAll('.card').forEach(reveal));
+$('#reset').addEventListener('click',()=>{build();window.scrollTo({top:0})});
+build();
+</script>
+</body>
+</html>
