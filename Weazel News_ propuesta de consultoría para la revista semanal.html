@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Weazel News: propuesta de consultoría para la revista semanal</title>
+<style>
+:root{--bg:#f2f1ee;--sf:#fff;--tx:#14161a;--mu:#474c55;--rd:#c8102e;--rt:#b00020;--on:#fff;--ln:#c9c8c3;color-scheme:light dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0f12;--sf:#1a1c21;--tx:#f4f3f0;--mu:#bcbfc6;--rt:#ff7b87;--ln:#383b43}}
+:root[data-theme="dark"]{--bg:#0e0f12;--sf:#1a1c21;--tx:#f4f3f0;--mu:#bcbfc6;--rt:#ff7b87;--ln:#383b43;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;height:100%;display:flex;flex-direction:column;background:var(--bg);color:var(--tx);font:clamp(1rem,.9rem + .55vw,1.3rem)/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.skip{position:absolute;left:-999px;top:0;background:var(--rd);color:var(--on);padding:.6rem 1rem;z-index:20}
+.skip:focus{left:0}
+:focus-visible{outline:3px solid var(--rt);outline-offset:3px}
+header{display:flex;align-items:stretch;border-bottom:3px solid var(--rd);background:var(--sf)}
+.tag{background:var(--rd);color:var(--on);font:800 1rem/1 "Arial Narrow","Roboto Condensed","Helvetica Neue",Arial,sans-serif;font-stretch:condensed;text-transform:uppercase;letter-spacing:.06em;padding:.8rem 1rem;display:flex;align-items:center}
+.hd{flex:1;padding:.6rem 1rem;font-weight:600;color:var(--mu);display:flex;align-items:center}
+button{font:inherit;min-height:44px;min-width:44px;padding:.4rem 1rem;border:2px solid var(--tx);background:var(--sf);color:var(--tx);border-radius:0;cursor:pointer;font-weight:700}
+button:hover{background:var(--tx);color:var(--bg)}
+button[aria-disabled="true"]{opacity:.45;cursor:not-allowed}
+button[aria-disabled="true"]:hover{background:var(--sf);color:var(--tx)}
+#th{border:0;border-left:2px solid var(--ln)}
+main{flex:1;overflow:auto;padding:clamp(1rem,4vw,3.5rem)}
+.js .slide[hidden]{display:none}
+.slide{max-width:72rem;margin:0 auto 3rem}
+.js .slide{margin-bottom:0}
+h1,h2{font-family:"Arial Narrow","Roboto Condensed","Helvetica Neue",Arial,sans-serif;font-stretch:condensed;font-weight:800;line-height:1.05;margin:0 0 1.2rem;letter-spacing:-.01em;text-wrap:balance}
+h1{font-size:clamp(2.4rem,7vw,5rem);text-transform:uppercase}
+h2{font-size:clamp(1.9rem,4.6vw,3.2rem);padding-left:.9rem;border-left:.5rem solid var(--rd)}
+h1:focus,h2:focus{outline:none}
+.lead{font-size:1.2em;max-width:44rem;color:var(--mu)}
+.meta{margin-top:1.5rem;padding:1rem 1.2rem;background:var(--rd);color:var(--on);display:inline-block;font-weight:600}
+ul,ol{padding-left:1.3rem;max-width:50rem}
+li{margin:.45rem 0}
+li::marker{color:var(--rt);font-weight:800}
+.grid{list-style:none;padding:0;max-width:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem}
+.grid li{margin:0;background:var(--sf);border:1px solid var(--ln);border-top:5px solid var(--rd);padding:1rem 1.1rem}
+.grid strong{display:block;font-size:1.15em;margin-bottom:.3rem}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:34rem;background:var(--sf)}
+caption{text-align:left;font-weight:700;padding:.4rem 0;color:var(--mu)}
+th,td{border:1px solid var(--ln);padding:.7rem .8rem;text-align:left;vertical-align:top}
+thead th{background:var(--rd);color:var(--on)}
+tbody th{background:var(--bg)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1.5rem}
+.two h3{margin:0 0 .4rem;font-size:1.2em;color:var(--rt)}
+footer{display:flex;align-items:center;gap:.75rem;padding:.6rem 1rem;border-top:3px solid var(--rd);background:var(--sf)}
+.js footer{display:flex}
+footer{display:none}
+.js footer{display:flex}
+#st{flex:1;font-weight:700}
+#pg{position:absolute;left:0;bottom:0;height:4px;background:var(--rt);width:0;transition:width .25s}
+footer{position:relative}
+@keyframes in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes slam{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
+.js .slide{animation:in .4s ease-out backwards}
+.js .slide h1,.js .slide h2{animation:wipe .55s cubic-bezier(.7,0,.2,1) backwards}
+.js .slide .lead{animation:in .45s ease-out .2s backwards}
+.js .slide li,.js .slide tbody tr,.js .slide .two h3{animation:in .45s ease-out backwards}
+.js .slide li:nth-child(1),.js .slide tbody tr:nth-child(1){animation-delay:.2s}
+.js .slide li:nth-child(2),.js .slide tbody tr:nth-child(2){animation-delay:.3s}
+.js .slide li:nth-child(3),.js .slide tbody tr:nth-child(3){animation-delay:.4s}
+.js .slide li:nth-child(4),.js .slide tbody tr:nth-child(4){animation-delay:.5s}
+.js .slide li:nth-child(5){animation-delay:.6s}
+.js .slide li:nth-child(6){animation-delay:.7s}
+.js .slide .meta{animation:slam .5s cubic-bezier(.2,.8,.2,1) .45s backwards}
+button{transition:background-color .15s,color .15s}
+@media(prefers-reduced-motion:reduce){.js .slide,.js .slide *{animation:none!important}#pg,button{transition:none}}
+figure{margin:1.5rem 0 0}
+figcaption{color:var(--mu);margin-top:.6rem;font-size:.9em}
+svg.dg{display:block;width:100%;height:auto;min-width:36rem}
+.dg text{fill:var(--tx);font:700 15px system-ui,Arial,sans-serif}
+.dg .sm{font-size:13px;font-weight:500;fill:var(--mu)}
+.dg text.on{fill:#fff}
+.dg .box{fill:var(--sf);stroke:var(--tx);stroke-width:2}
+.dg .red{fill:var(--rd);stroke:var(--rd)}
+.dg .ln{stroke:var(--tx);stroke-width:2;fill:none}
+.dg .gl{stroke:var(--ln);stroke-width:1}
+.dg .lt{fill:var(--ln);stroke:var(--mu);stroke-width:1.5}
+.dg .ah{fill:var(--tx)}
+.dg .ad{fill:none;stroke:var(--rt);stroke-width:3;stroke-dasharray:7 4}
+.dg .ext{fill:var(--rd);fill-opacity:.3;stroke:var(--rd);stroke-width:2}
+.js .slide .dg .a{animation:in .5s ease-out var(--d,0s) backwards}
+.flow{list-style:none;padding:0;max-width:none;margin:1.5rem 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(var(--r,4),auto);grid-auto-flow:column;column-gap:clamp(1.5rem,5vw,4rem);counter-reset:f}
+.flow li{margin:0;display:grid;grid-template-columns:2.4rem 1fr;column-gap:1rem;align-items:start;padding:.9rem 0;border-top:2px solid var(--tx);counter-increment:f}
+.flow li::before{content:counter(f);grid-row:span 2;display:grid;place-items:center;width:2.4rem;height:2.4rem;background:var(--rd);color:#fff;font-weight:800}
+.flow b,.flow span{grid-column:2}
+.flow b{font-size:1.1em}
+.flow span{color:var(--mu);font-size:.95em}
+@media(max-width:40rem){.flow{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row}}
+@media(max-width:34rem){.hd{display:none}}
+.cover{background:var(--rd);color:#fff;padding:clamp(1.5rem,5vw,4rem)}
+.cover h1{color:#fff;font-size:clamp(2.6rem,8vw,6rem);margin-bottom:1.5rem}
+.cover .lead{color:#fff;margin:0}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));margin:0;border:2px solid var(--tx);border-top:0;background:var(--sf)}
+.facts div{padding:.8rem 1.1rem;border-left:2px solid var(--ln)}
+.facts div:first-child{border-left:0}
+.facts dt{color:var(--mu);font-size:.85em}
+.facts dd{margin:0;font-weight:700}
+.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.5rem,4vw,4rem);align-items:start}
+.split .lead{margin:0}
+.rule{list-style:none;padding:0;max-width:none;margin:0}
+.rule li{margin:0;padding:.9rem 0 .9rem 1.7rem;border-top:1px solid var(--ln);position:relative}
+.rule li:last-child{border-bottom:1px solid var(--ln)}
+.rule li::before{content:"";position:absolute;left:0;top:1.5rem;width:.7rem;height:.7rem;background:var(--rd)}
+@media(max-width:48rem){.split{grid-template-columns:1fr}}
+.ph{border-bottom:2px dashed var(--rt);font-weight:700}
+#st{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* ===== Revista: páginas de papel y pase de página ===== */
+:root{--pp:#fdfcf8;--bg:#dcd9d2}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--pp:#202228}}
+:root[data-theme="dark"]{--pp:#202228}
+main{display:grid;align-content:start;overflow-x:hidden}
+.js .slide{grid-area:1/1;align-self:start;width:100%;display:flex;flex-direction:column;min-height:min(44rem,calc(100dvh - 11rem));padding:clamp(1.2rem,3.5vw,3rem);background:var(--gr),linear-gradient(115deg,rgba(255,255,255,.2),rgba(255,255,255,0) 34%,rgba(255,255,255,0) 66%,rgba(255,255,255,.1)),linear-gradient(90deg,rgba(0,0,0,.27),rgba(0,0,0,.08) .7rem,rgba(255,255,255,.2) 1.25rem,transparent 3rem),var(--pp);border:1px solid var(--ln);box-shadow:3px 3px 0 0 var(--pp),4px 4px 0 0 var(--ln),7px 7px 0 0 var(--pp),8px 8px 0 0 var(--ln),0 18px 40px -18px rgba(0,0,0,.45);font-family:Georgia,"Times New Roman",serif;line-height:1.6;animation:none}
+.js .slide h1,.js .slide h2,.js .slide .lead,.js .slide li,.js .slide tbody tr,.js .slide .two h3,.js .slide .meta,.js .slide .dg .a{animation:none}
+.slide h2{border-left:0;padding:.55rem 0 .5rem;border-top:6px solid var(--rd);border-bottom:1px solid var(--tx)}
+.lead{font-style:italic}
+.run{display:flex;justify-content:space-between;gap:1rem;font:700 .8rem/1 "Arial Narrow","Roboto Condensed",Arial,sans-serif;font-stretch:condensed;text-transform:uppercase;letter-spacing:.12em;color:var(--mu);padding-bottom:.6rem;margin-bottom:1.4rem;border-bottom:1px solid var(--ln)}
+.folio{margin-top:auto;padding-top:2rem;text-align:center;font:700 .95rem Georgia,serif;color:var(--mu)}
+.js .slide[aria-label="Portada"]{padding:0}
+.cover{flex:1;display:flex;flex-direction:column}
+.cover::before{content:"Weazel News";font:800 clamp(2.2rem,8vw,5rem)/1 "Arial Narrow","Roboto Condensed",Arial,sans-serif;font-stretch:condensed;text-transform:uppercase;letter-spacing:.04em;padding-bottom:.8rem;margin-bottom:2rem;border-bottom:5px double #fff}
+.cover h1{margin-top:auto}
+.facts{border:0;border-top:3px solid var(--tx)}
+/* ===== Pase de página: hoja que se curva ===== */
+.stage{position:fixed;inset:0;z-index:30;pointer-events:none;overflow:hidden;perspective:2600px}
+.cwrap,.cast,.strip,.sc,.sb,.shade{position:absolute}
+.cwrap{overflow:hidden}
+.cast{top:0;bottom:0;left:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.18) 45%,rgba(0,0,0,0))}
+.strip{transform-style:preserve-3d;transform-origin:0 50%;will-change:transform}
+.sc,.sb{top:0;bottom:0;left:0;right:-1px;overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+:root{--gr:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.sb{transform:rotateY(180deg);background:var(--gr),linear-gradient(245deg,rgba(255,255,255,.2),rgba(255,255,255,0) 40%),var(--pp)}
+.sb::before{content:"";position:absolute;inset:11% 9% 13%;background:repeating-linear-gradient(180deg,rgba(30,30,30,.08) 0 .14rem,transparent .14rem .66rem);-webkit-mask:linear-gradient(90deg,#000 46%,transparent 46% 54%,#000 54%);mask:linear-gradient(90deg,#000 46%,transparent 46% 54%,#000 54%)}
+.lst>.sc::after,.lst>.sb::after{content:"";position:absolute;top:0;bottom:0;right:1px;width:3px;background:linear-gradient(90deg,rgba(255,255,255,.5),rgba(0,0,0,.35));pointer-events:none}
+.shade{inset:0;background:linear-gradient(90deg,rgba(255,255,255,var(--ha,0)),rgba(255,255,255,var(--hb,0))),linear-gradient(90deg,rgba(0,0,0,var(--a,0)),rgba(0,0,0,var(--b,0)))}
+.sb .shade{background:linear-gradient(270deg,rgba(255,255,255,var(--ha,0)),rgba(255,255,255,var(--hb,0))),linear-gradient(270deg,rgba(0,0,0,var(--a,0)),rgba(0,0,0,var(--b,0)))}
+
+/* ===== Todas las páginas del mismo tamaño ===== */
+:root{--ph:clamp(30rem,calc(100dvh - 10.5rem),60rem)}
+main{padding-block:clamp(.6rem,2.2vw,1.4rem)}
+.js .slide{height:var(--ph);min-height:0;overflow-x:hidden;overflow-y:auto;scrollbar-width:thin}
+.stage .slide{overflow:hidden}
+.slide h2{margin-bottom:.9rem}.run{margin-bottom:1rem}.folio{padding-top:.8rem}
+.slide>figure{flex:1 1 0;min-height:11rem;display:flex;flex-direction:column;margin:.8rem 0 0}
+.slide>figure .wrap{flex:1 1 0;min-height:0;display:flex}
+.slide>figure svg.dg{flex:1 1 auto;width:100%;height:100%;min-height:0}
+.slide table{font-size:.86em}.slide th,.slide td{padding:.5rem .7rem}
+.slide .split,.slide .two{flex:1;align-content:center}
+/* ===== Animación explicativa: arranca cuando la página ya ha aterrizado ===== */
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.92)}to{opacity:1;transform:none}}
+@keyframes draw{0%{opacity:0;stroke-dashoffset:1}1%{opacity:1}100%{opacity:1;stroke-dashoffset:0}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:none}}
+.dg .k{stroke-dasharray:1}
+@media(prefers-reduced-motion:no-preference){
+main .slide:not(.play) .t{opacity:0}
+main .slide.play .t{animation:in .5s ease-out var(--dl,0s) backwards}
+main .slide.play :is(h1,h2).t{animation:wipe .6s cubic-bezier(.7,0,.2,1) var(--dl,0s) backwards}
+main .slide.play .meta.t{animation:slam .5s cubic-bezier(.2,.8,.2,1) var(--dl,0s) backwards}
+main .slide.play .a.t{animation:pop .5s cubic-bezier(.2,.8,.2,1) var(--dl,0s) backwards;transform-box:fill-box;transform-origin:center}
+main .slide.play .k.t{animation:draw var(--dur,.45s) ease-in-out var(--dl,0s) backwards}
+main .slide.play .dg[aria-labelledby="t4 d4"] .a.t{animation:in .4s ease-out var(--dl,0s) backwards}
+main .slide.play .dg[aria-labelledby="t4 d4"] .a.t rect{transform-box:fill-box;transform-origin:0 50%;animation:grow .7s cubic-bezier(.2,.8,.2,1) calc(var(--dl,0s) + .15s) backwards}
+main .slide.sk .t,main .slide.sk .t *{animation:none!important}
+}
+/* ===== Iconos y negritas ===== */
+.ic{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.2em;margin-right:.4em;color:var(--rt)}
+.slide strong{font-weight:700}
+.lead strong{color:var(--tx)}
+.cover .lead strong{color:#fff}
+.flow span strong{color:var(--tx)}
+.grid strong{display:flex;align-items:center;gap:.55rem}
+.grid .ic{width:1.5em;height:1.5em;margin:0}
+.facts dt .ic{width:1em;height:1em;margin-right:.35em}
+.rule li{padding-left:2.3rem}
+.rule li::before{display:none}
+.rule li>.ic{position:absolute;left:0;top:1.05rem;width:1.35rem;height:1.35rem;margin:0}
+.two ul{list-style:none;padding:0}
+.two ul>li{position:relative;padding-left:1.9rem}
+.two ul>li>.ic{position:absolute;left:0;top:.3em;width:1.2rem;height:1.2rem;margin:0}
+.two h3 .ic{width:1.1em;height:1.1em}
+.meta .ic{color:#fff}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol><symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="7" rx="1"/><rect x="3" y="14" width="9" height="7" rx="1"/><rect x="16" y="14" width="5" height="7" rx="1"/></symbol><symbol id="i-megaphone" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol><symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol><symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></symbol><symbol id="i-workflow" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect x="13" y="13" width="8" height="8" rx="2"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol><symbol id="i-split" viewBox="0 0 24 24"><path d="M16 3h5v5M8 3H3v5M12 22v-8.3a4 4 0 0 0-1.17-2.87L3 3M15 9l6-6"/></symbol><symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-type" viewBox="0 0 24 24"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></symbol><symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol><symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.59 2.59A2 2 0 0 0 11.17 2H4a2 2 0 0 0-2 2v7.17a2 2 0 0 0 .59 1.41l8.7 8.7a2.43 2.43 0 0 0 3.42 0l6.58-6.58a2.43 2.43 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5"/></symbol><symbol id="i-euro" viewBox="0 0 24 24"><path d="M18 7c-1.1-1.3-2.7-2-4.5-2-3 0-5.5 3-5.5 7s2.5 7 5.5 7c1.8 0 3.4-.7 4.5-2M5 10h9M5 14h9"/></symbol><symbol id="i-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol><symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol><symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></symbol><symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5M3 12a9 3 0 0 0 18 0"/></symbol><symbol id="i-trend" viewBox="0 0 24 24"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol><symbol id="i-clip" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2M12 11h4M12 16h4M8 11h.01M8 16h.01"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol><symbol id="i-case" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3 20 12 6 21z"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M16.5 9.4 7.5 4.21"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></symbol><symbol id="i-next" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></symbol></defs></svg>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+<header>
+<div class="tag">Propuesta</div>
+<div class="hd">Weazel News: consultoría para la revista semanal</div>
+<button id="th" type="button" aria-label="Cambiar entre tema claro y oscuro">Tema</button>
+</header>
+<main id="main" tabindex="-1">
+
+<section class="slide" aria-roledescription="diapositiva" aria-label="Portada">
+<div class="cover">
+<h1 tabindex="-1">Consultoría integral para la revista semanal de Weazel News</h1>
+<p class="lead">Técnica, organizativa, de diseño de formatos y de publicidad: <strong>una sola propuesta</strong> para que cada edición se <strong>produzca mejor</strong>, se <strong>lea mejor</strong> y se <strong>financie mejor</strong>.</p>
+</div>
+<dl class="facts"><div><dt><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-case"/></svg>Para</dt><dd>Weazel News</dd></div><div><dt><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pen"/></svg>Preparada por</dt><dd>Fred</dd></div><div><dt><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg>Fecha</dt><dd>19 de noviembre de 2026</dd></div><div><dt><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg>Validez</dt><dd>30 días</dd></div></dl>
+</section>
+
+<section class="slide" aria-roledescription="diapositiva" aria-label="Resumen ejecutivo">
+<h2 tabindex="-1">Cuatro frentes que se refuerzan entre sí</h2>
+<ul class="grid">
+<li><strong><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-wrench"/></svg>Técnica</strong><b>Producción, distribución y analítica</b> de cada edición.</li>
+<li><strong><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-users"/></svg>Organizativa</strong><b>Roles, calendario editorial</b> y flujos de cierre.</li>
+<li><strong><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-layout"/></svg>Diseño de formatos</strong>Un <b>sistema visual coherente</b> para impreso, web y móvil.</li>
+<li><strong><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-megaphone"/></svg>Publicidad</strong><b>Oferta comercial clara, medible</b> y respetuosa con el lector.</li>
+</ul>
+<figure><div class="wrap" role="region" aria-label="Esquema de los cuatro frentes" tabindex="0"><svg class="dg" viewBox="0 0 760 340" role="img" aria-labelledby="t1 d1"><title id="t1">Esquema de los cuatro frentes</title><desc id="d1">La revista semanal ocupa el centro y se conecta con cuatro frentes: técnica, organizativa, diseño de formatos y publicidad.</desc><path class="ln k" pathLength="1" style="--d:.1s;--dur:1s" d="M250 75L322 128M510 75L438 128M250 265L322 212M510 265L438 212"/><g class="a"><circle class="red" cx="380" cy="170" r="72"/><text class="on" x="380" y="166" text-anchor="middle">Revista</text><text class="on" x="380" y="188" text-anchor="middle">semanal</text></g><g class="a" style="--d:.15s"><rect class="box" x="40" y="40" width="210" height="70"/><text x="145" y="72" text-anchor="middle">Técnica</text><text class="sm" x="145" y="94" text-anchor="middle">Producción y analítica</text></g><g class="a" style="--d:.3s"><rect class="box" x="510" y="40" width="210" height="70"/><text x="615" y="72" text-anchor="middle">Organizativa</text><text class="sm" x="615" y="94" text-anchor="middle">Roles y calendario</text></g><g class="a" style="--d:.45s"><rect class="box" x="40" y="230" width="210" height="70"/><text x="145" y="262" text-anchor="middle">Diseño de formatos</text><text class="sm" x="145" y="284" text-anchor="middle">Sistema visual</text></g><g class="a" style="--d:.6s"><rect class="box" x="510" y="230" width="210" height="70"/><text x="615" y="262" text-anchor="middle">Publicidad</text><text class="sm" x="615" y="284" text-anchor="middle">Oferta comercial</text></g></svg></div><figcaption>Los cuatro frentes comparten un mismo objetivo: una edición semanal mejor producida y mejor financiada.</figcaption></figure>
+</section>
+
+<section class="slide" aria-roledescription="diapositiva" aria-label="Contexto y objetivos">
+<div class="split">
+<div>
+<h2 tabindex="-1">Qué quiero conseguir</h2>
+<p class="lead">Una revista con <strong>identidad y lectores fieles</strong>, pero con <strong>cierres ajustados</strong>, <strong>herramientas dispersas</strong> y <strong>publicidad vendida por inercia</strong>.</p>
+</div>
+<ul class="rule">
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg><strong>Reducir el tiempo y el esfuerzo</strong> de producción de cada edición.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-layers"/></svg>Establecer un <strong>sistema de diseño reutilizable</strong> en todos los soportes.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-users"/></svg>Clarificar <strong>roles, responsabilidades y calendario</strong> semanal.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-megaphone"/></svg><strong>Profesionalizar la oferta publicitaria</strong> sin dañar la experiencia del lector.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-file"/></svg>Dejar al equipo con <strong>documentación y criterios propios</strong>.</li>
+</ul>
+</div>
+</section>
+
+<section class="slide" aria-roledescription="diapositiva" aria-label="Consultoría técnica">
+<div class="split">
+<div>
+<h2 tabindex="-1">Consultoría técnica</h2>
+<p class="lead">Reviso la <strong>cadena completa</strong>, de la redacción al lector.</p>
+</div>
+<ul class="rule">
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><strong>Auditoría de la cadena de producción</strong>: gestor de contenidos, maquetación y archivos.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-monitor"/></svg><strong>Revisión de salidas</strong>: PDF e impreso, web, móvil y boletín.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-zap"/></svg><strong>Automatización</strong> de tareas repetitivas y <strong>publicación multicanal</strong>.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chart"/></svg><strong>Panel semanal</strong> de lectura, suscripción y rendimiento publicitario.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg><strong>Rendimiento, accesibilidad, SEO, seguridad</strong> y cumplimiento del RGPD.</li>
+</ul>
+</div>
+</section>
+
+<section class="slide" aria-roledescription="diapositiva" aria-label="Esquema técnico">
+<h2 tabindex="-1">Del texto al lector</h2>
+<p class="lead">Una sola <strong>cadena de producción</strong> alimenta todas las salidas y se mide en un <strong>único panel</strong>.</p>
+<figure><div class="wrap" role="region" aria-label="Esquema técnico de producción y distribución" tabindex="0"><svg class="dg" viewBox="0 0 820 390" role="img" aria-labelledby="t2 d2"><title id="t2">Esquema técnico de producción y distribución</title><desc id="d2">La redacción alimenta el gestor de contenidos, que aplica las plantillas de diseño para generar cuatro salidas: impreso y PDF, web, móvil y boletín. La analítica mide todas las salidas.</desc><defs><marker id="ar2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path class="ah" d="M0 0L9 4.5L0 9z"/></marker></defs><g class="ln"><path class="k" pathLength="1" style="--d:.05s" d="M140 165H186" marker-end="url(#ar2)"/><path class="k" pathLength="1" style="--d:.2s" d="M320 165H366" marker-end="url(#ar2)"/><path class="k" pathLength="1" style="--d:.35s" d="M510 165C545 165 545 42 576 42" marker-end="url(#ar2)"/><path class="k" pathLength="1" style="--d:.35s" d="M510 165C545 165 545 122 576 122" marker-end="url(#ar2)"/><path class="k" pathLength="1" style="--d:.35s" d="M510 165C545 165 545 202 576 202" marker-end="url(#ar2)"/><path class="k" pathLength="1" style="--d:.35s" d="M510 165C545 165 545 282 576 282" marker-end="url(#ar2)"/></g><g class="a"><rect class="box" x="10" y="130" width="130" height="70"/><text x="75" y="162" text-anchor="middle">Redacción</text><text class="sm" x="75" y="184" text-anchor="middle">Textos e imágenes</text></g><g class="a" style="--d:.15s"><rect class="box" x="190" y="130" width="130" height="70"/><text x="255" y="162" text-anchor="middle">CMS</text><text class="sm" x="255" y="184" text-anchor="middle">Gestor de contenidos</text></g><g class="a" style="--d:.3s"><rect class="red" x="370" y="130" width="140" height="70"/><text class="on" x="440" y="162" text-anchor="middle">Plantillas</text><text class="on" x="440" y="184" text-anchor="middle">Sistema de diseño</text></g><g class="a" style="--d:.45s"><rect class="box" x="580" y="15" width="200" height="54"/><text x="680" y="48" text-anchor="middle">Impreso y PDF</text><rect class="box" x="580" y="95" width="200" height="54"/><text x="680" y="128" text-anchor="middle">Web</text><rect class="box" x="580" y="175" width="200" height="54"/><text x="680" y="208" text-anchor="middle">Móvil</text><rect class="box" x="580" y="255" width="200" height="54"/><text x="680" y="288" text-anchor="middle">Boletín</text></g><g class="a" style="--d:.6s"><rect class="red" x="190" y="334" width="590" height="46"/><text class="on" x="485" y="363" text-anchor="middle">Analítica: lectura, suscripción y publicidad de cada salida</text></g></svg></div><figcaption>Arquitectura objetivo: del contenido a las cuatro salidas, con analítica común.</figcaption></figure>
+</section>
+
+<section class="slide" aria-roledescription="diapositiva" aria-label="Consultoría organizativa">
+<div class="split">
+<div>
+<h2 tabindex="-1">Consultoría organizativa</h2>
+<p class="lead">Menos <strong>cuellos de botella</strong> y un <strong>calendario</strong> que todo el equipo sigue.</p>
+</div>
+<ul class="rule">
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><strong>Diagnóstico de roles, dependencias y cuellos de botella</strong>.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg><strong>Calendario editorial semanal</strong> con hitos de encargo, revisión, cierre y publicación.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-workflow"/></svg><strong>Flujos distintos</strong> para actualidad, reportajes de eventos y piezas de fondo.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-book"/></svg><strong>Guía de estilo y de verificación</strong>: fuentes, correcciones y titulación.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-split"/></svg><strong>Separación clara</strong> entre contenido editorial y publicitario.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-cap"/></svg><strong>Formación práctica</strong> y materiales de consulta rápida.</li>
+</ul>
+</div>
+</section>
+
+<section class="slide" aria-roledescription="diapositiva" aria-label="Ciclo editorial semanal">
+<h2 tabindex="-1">El ciclo semanal de una edición</h2>
+<p class="lead">Siete <strong>hitos fijos</strong>, cada uno con un <strong>responsable</strong> y un <strong>plazo</strong>.</p>
+<ol class="flow">
+<li><b><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-clip"/></svg>Planificación</b><span><strong>Temas</strong> y reparto de la edición.</span></li>
+<li><b><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pen"/></svg>Encargos</b><span>Cada pieza con <strong>responsable y plazo</strong>.</span></li>
+<li><b><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-send"/></svg>Entrega de textos</b><span><strong>Material completo</strong> y fuentes.</span></li>
+<li><b><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Revisión</b><span><strong>Verificación</strong>, correcciones y titulación.</span></li>
+<li><b><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-layout"/></svg>Maquetación</b><span>Con las <strong>plantillas</strong> del sistema de diseño.</span></li>
+<li><b><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-lock"/></svg>Cierre</b><span><strong>Aprobación final</strong> de la edición.</span></li>
+<li><b><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-globe"/></svg>Publicación</b><span><strong>Impreso, web, móvil</strong> y boletín.</span></li>
+</ol>
+<p>Actualidad, reportajes de eventos y piezas de fondo siguen el <strong>mismo ciclo</strong> con <strong>tiempos distintos</strong>.</p>
+</section>
+
+<section class="slide" aria-roledescription="diapositiva" aria-label="Diseño gráfico de formatos">
+<div class="split">
+<div>
+<h2 tabindex="-1">Diseño gráfico de formatos</h2>
+<p class="lead">Un <strong>sistema reutilizable</strong>, no piezas sueltas.</p>
+</div>
+<ul class="rule">
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-eye"/></svg><strong>Auditoría visual</strong> de las últimas ediciones.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-type"/></svg><strong>Sistema de diseño editorial</strong>: tipografía, paleta, retículas y componentes.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-layout"/></svg><strong>Plantillas por formato</strong>: noticia breve, crónica, entrevista, reportaje de evento y opinión.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-image"/></svg><strong>Criterios de fotografía, ilustración e infografía</strong>.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg><strong>Adaptación responsiva</strong> y espacios publicitarios integrados en la maqueta.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-file"/></svg><strong>Manual de uso</strong> y archivos fuente listos para el equipo.</li>
+</ul>
+</div>
+</section>
+
+<section class="slide" aria-roledescription="diapositiva" aria-label="Anatomía de una página">
+<h2 tabindex="-1">Anatomía de una página</h2>
+<figure><div class="wrap" role="region" aria-label="Esquema de una página tipo" tabindex="0"><svg class="dg" viewBox="0 0 760 420" role="img" aria-labelledby="t3 d3"><title id="t3">Esquema de una página tipo</title><desc id="d3">De arriba abajo: cabecera de sección, titular, entradilla, una imagen con pie de foto junto a una cita destacada, y una fila de tres columnas con dos de texto y un hueco para anuncio.</desc><g class="a"><rect class="box" x="20" y="10" width="420" height="400"/><rect class="red" x="20" y="10" width="420" height="50"/><text class="on" x="40" y="41">Cabecera: sección y fecha</text></g><g class="a" style="--d:.15s"><rect class="box" x="40" y="75" width="380" height="50"/><text x="60" y="106">Titular</text><rect class="box" x="40" y="135" width="380" height="40"/><text class="sm" x="60" y="160">Entradilla</text></g><g class="a" style="--d:.3s"><rect class="lt" x="40" y="185" width="230" height="130"/><text x="155" y="247" text-anchor="middle">Imagen</text><text class="sm" x="155" y="268" text-anchor="middle">con pie de foto</text><rect class="box" x="285" y="185" width="135" height="130"/><text x="352" y="247" text-anchor="middle">Cita</text><text class="sm" x="352" y="268" text-anchor="middle">destacada</text></g><g class="a" style="--d:.45s"><rect class="box" x="40" y="325" width="113" height="70"/><text class="sm" x="96" y="365" text-anchor="middle">Texto</text><rect class="box" x="167" y="325" width="113" height="70"/><text class="sm" x="223" y="365" text-anchor="middle">Texto</text><rect class="ad" x="294" y="325" width="126" height="70"/><text x="357" y="356" text-anchor="middle">Anuncio</text><text class="sm" x="357" y="376" text-anchor="middle">etiquetado</text></g><g class="a" style="--d:.6s"><text x="480" y="70">Retícula de tres columnas</text><text class="sm" x="480" y="92">Misma base en todos los formatos.</text><text x="480" y="150">Jerarquía clara</text><text class="sm" x="480" y="172">Titular, entradilla, cuerpo y cita.</text><text x="480" y="230">Publicidad integrada</text><text class="sm" x="480" y="252">Hueco fijo y etiquetado.</text><text x="480" y="310">Plantillas por formato</text><text class="sm" x="480" y="332">Noticia, crónica y reportaje.</text></g></svg></div><figcaption>Cada componente de la página es reutilizable y se adapta a impreso, web y móvil.</figcaption></figure>
+</section>
+
+<section class="slide" aria-roledescription="diapositiva" aria-label="Publicidad y modelo comercial">
+<div class="split">
+<div>
+<h2 tabindex="-1">Publicidad y modelo comercial</h2>
+<p class="lead">Vender <strong>con datos</strong> sin dañar la <strong>experiencia de lectura</strong>.</p>
+</div>
+<ul class="rule">
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chart"/></svg><strong>Análisis de audiencia</strong> para vender con datos.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg>Revisión del <strong>inventario, precios y clientes</strong> actuales.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-megaphone"/></svg><strong>Formatos clásicos</strong>, patrocinio de secciones y reportajes, <strong>contenido de marca señalizado</strong> y boletín.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-euro"/></svg><strong>Tarifario, paquetes</strong> y política de renovación.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-tag"/></svg>Normas de <strong>etiquetado</strong> y límites entre publicidad y periodismo.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-file"/></svg><strong>Dosier de medios</strong>, calendario de temas especiales e informes al anunciante.</li>
+</ul>
+</div>
+</section>
+
+<section class="slide" aria-roledescription="diapositiva" aria-label="Ciclo comercial">
+<h2 tabindex="-1">Del dato de audiencia a la renovación</h2>
+<p class="lead">Un <strong>ciclo comercial</strong> que se repite en cada edición y cuida la <strong>relación con el anunciante</strong>.</p>
+<ol class="flow" style="--r:3">
+<li><b><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-users"/></svg>Audiencia</b><span><strong>Perfil</strong> y hábitos de lectura.</span></li>
+<li><b><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-tag"/></svg>Oferta</b><span><strong>Formatos y paquetes</strong>.</span></li>
+<li><b><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-case"/></svg>Venta</b><span><strong>Prospección</strong> y seguimiento.</span></li>
+<li><b><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-globe"/></svg>Publicación</b><span>Con <strong>etiquetado claro</strong>.</span></li>
+<li><b><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-file"/></svg>Informe</b><span><strong>Resultados</strong> para el anunciante.</span></li>
+<li><b><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-repeat"/></svg>Renovación</b><span><strong>Política</strong> y condiciones.</span></li>
+</ol>
+</section>
+
+<section class="slide" aria-roledescription="diapositiva" aria-label="Metodología y fases">
+<h2 tabindex="-1">Cuatro fases, de 15 a 21 semanas</h2>
+<div class="wrap" role="region" aria-label="Tabla de fases" tabindex="0">
+<table>
+<caption>Fases del proyecto, duración y entregables</caption>
+<thead><tr><th scope="col">Fase</th><th scope="col">Duración</th><th scope="col">Entregable principal</th></tr></thead>
+<tbody>
+<tr><th scope="row"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-search"/></svg>1. Diagnóstico</th><td><strong>3 a 4 semanas</strong></td><td><strong>Informe</strong> con hallazgos y prioridades</td></tr>
+<tr><th scope="row"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pen"/></svg>2. Diseño de la solución</th><td><strong>4 a 6 semanas</strong></td><td><strong>Propuesta de solución</strong> y hoja de ruta</td></tr>
+<tr><th scope="row"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-play"/></svg>3. Implementación piloto</th><td><strong>6 a 8 semanas</strong></td><td><strong>Plantillas, flujos, tarifario</strong> y paneles</td></tr>
+<tr><th scope="row"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>4. Consolidación</th><td><strong>2 a 3 semanas</strong></td><td><strong>Manuales, informe final</strong> y plan a 12 meses</td></tr>
+</tbody>
+</table>
+</div>
+<figure><div class="wrap" role="region" aria-label="Gráfico de duración por fase" tabindex="0"><svg class="dg" viewBox="0 0 760 272" role="img" aria-labelledby="t4 d4"><title id="t4">Duración de cada fase en semanas</title><desc id="d4">Gráfico de barras: diagnóstico de 3 a 4 semanas, diseño de la solución de 4 a 6, implementación piloto de 6 a 8 y consolidación de 2 a 3.</desc><path class="gl" d="M190 25V225M260 25V225M330 25V225M400 25V225M470 25V225M540 25V225M610 25V225M680 25V225M750 25V225"/><rect class="red" x="190" y="2" width="16" height="14"/><text class="sm" x="212" y="14">Duración mínima</text><rect class="ext" x="360" y="2" width="16" height="14"/><text class="sm" x="382" y="14">Duración máxima</text><g class="a"><text x="10" y="56">1. Diagnóstico</text><rect class="red" x="190" y="35" width="210" height="30"/><rect class="ext" x="400" y="35" width="70" height="30"/><text class="on" x="200" y="56">3 a 4 semanas</text></g><g class="a" style="--d:.15s"><text x="10" y="106">2. Diseño</text><rect class="red" x="190" y="85" width="280" height="30"/><rect class="ext" x="470" y="85" width="140" height="30"/><text class="on" x="200" y="106">4 a 6 semanas</text></g><g class="a" style="--d:.3s"><text x="10" y="156">3. Implementación</text><rect class="red" x="190" y="135" width="420" height="30"/><rect class="ext" x="610" y="135" width="140" height="30"/><text class="on" x="200" y="156">6 a 8 semanas</text></g><g class="a" style="--d:.45s"><text x="10" y="206">4. Consolidación</text><rect class="red" x="190" y="185" width="140" height="30"/><rect class="ext" x="330" y="185" width="70" height="30"/><text class="on" x="200" y="206">2 a 3 semanas</text></g><g><text class="sm" x="190" y="245" text-anchor="middle">0</text><text class="sm" x="260" y="245" text-anchor="middle">1</text><text class="sm" x="330" y="245" text-anchor="middle">2</text><text class="sm" x="400" y="245" text-anchor="middle">3</text><text class="sm" x="470" y="245" text-anchor="middle">4</text><text class="sm" x="540" y="245" text-anchor="middle">5</text><text class="sm" x="610" y="245" text-anchor="middle">6</text><text class="sm" x="680" y="245" text-anchor="middle">7</text><text class="sm" x="750" y="245" text-anchor="middle">8</text><text class="sm" x="470" y="267" text-anchor="middle">Semanas</text></g></svg></div><figcaption>Duración de cada fase; el total estimado es de 15 a 21 semanas.</figcaption></figure>
+<p>Los cambios se prueban en <strong>3 o 4 ediciones reales</strong>, sin interrumpir el ritmo semanal.</p>
+</section>
+
+<section class="slide" aria-roledescription="diapositiva" aria-label="Entregables e indicadores">
+<h2 tabindex="-1">Qué recibirá y cómo lo mediré</h2>
+<div class="two">
+<div><h3><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-box"/></svg>Entregables</h3>
+<ul>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-file"/></svg><strong>Diagnóstico integral</strong> y hoja de ruta.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-wrench"/></svg><strong>Arquitectura técnica</strong> y guía de configuración.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg><strong>Calendario editorial</strong> y guía de estilo.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-layout"/></svg><strong>Sistema de diseño</strong> con plantillas.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-megaphone"/></svg><strong>Dosier de medios</strong> y paquetes publicitarios.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chart"/></svg><strong>Panel de indicadores</strong> y formación.</li>
+</ul></div>
+<div><h3><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-trend"/></svg>Indicadores de éxito</h3>
+<ul>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg><strong>Producción</strong>: menos tiempo de cierre y menos correcciones tardías.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-users"/></svg><strong>Audiencia</strong>: más lectores recurrentes y mayor apertura del boletín.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-layout"/></svg><strong>Diseño</strong>: más piezas hechas con plantillas.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-trend"/></svg><strong>Publicidad</strong>: más ingresos por edición y retención de anunciantes.</li>
+</ul></div>
+</div>
+</section>
+
+<section class="slide" aria-roledescription="diapositiva" aria-label="Inversión">
+<h2 tabindex="-1">Inversión</h2>
+<div class="wrap" role="region" aria-label="Tabla de modalidades económicas" tabindex="0">
+<table>
+<caption>Modalidades económicas (importes por completar)</caption>
+<thead><tr><th scope="col">Modalidad</th><th scope="col">Descripción</th><th scope="col">Importe</th></tr></thead>
+<tbody>
+<tr><th scope="row"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-box"/></svg>A. Proyecto cerrado</th><td><strong>Precio fijo</strong> por las cuatro fases</td><td><span class="ph">[XX.XXX €]</span> + IVA</td></tr>
+<tr><th scope="row"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-layers"/></svg>B. Por fases</th><td><strong>Facturación</strong> al cierre de cada fase</td><td><span class="ph">[X.XXX € por fase]</span> + IVA</td></tr>
+<tr><th scope="row"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg>C. Bolsa de horas</th><td><strong>Horas mensuales</strong> con informe de uso</td><td><span class="ph">[XX €/hora]</span> + IVA</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Opcional</strong>: acompañamiento de <strong>3 a 6 meses</strong> por <span class="ph">[X.XXX €/mes]</span> + IVA. <strong>Licencias y desplazamientos</strong> se acuerdan aparte.</p>
+</section>
+
+<section class="slide" aria-roledescription="diapositiva" aria-label="Condiciones y próximos pasos">
+<h2 tabindex="-1">Condiciones y próximos pasos</h2>
+<div class="two">
+<div><h3><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg>Condiciones</h3>
+<ul>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-lock"/></svg><strong>Confidencialidad</strong> de toda la información.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pen"/></svg><strong>Independencia editorial</strong>: no intervengo en los contenidos.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-key"/></svg>Los <strong>entregables a medida</strong> pasan a ser del medio tras el pago.</li>
+<li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-db"/></svg><strong>Datos personales</strong> bajo acuerdo conforme al RGPD.</li>
+</ul></div>
+<div><h3><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-next"/></svg>Próximos pasos</h3>
+<ol>
+<li><strong>Reunión</strong> de presentación y dudas.</li>
+<li>Ajuste de <strong>alcance y modalidad económica</strong>.</li>
+<li><strong>Firma</strong> del acuerdo de servicios.</li>
+<li><strong>Acceso</strong> a ediciones, datos y tarifas actuales.</li>
+<li><strong>Reunión de arranque</strong>.</li>
+</ol></div>
+</div>
+<p class="meta"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pen"/></svg><strong>Fred</strong>, autor de la propuesta para <strong>Weazel News</strong>.</p>
+</section>
+
+</main>
+<footer role="group" aria-label="Control de diapositivas">
+<button id="pv" type="button" aria-label="Diapositiva anterior">Anterior</button>
+<div id="st" role="status" aria-live="polite"></div>
+<button id="nx" type="button" aria-label="Diapositiva siguiente">Siguiente</button>
+<div id="pg" aria-hidden="true"></div>
+</footer>
+<script>
+(function(){
+var d=document.documentElement;d.classList.add('js');var fin=null,tm,ready=false,rm=matchMedia('(prefers-reduced-motion: reduce)');
+var S=[].slice.call(document.querySelectorAll('.slide')),st=document.getElementById('st'),pv=document.getElementById('pv'),nx=document.getElementById('nx'),pg=document.getElementById('pg'),mn=document.getElementById('main'),i=0;
+var N=16,DUR=900,QUICK=520,P=2600,lt=0;
+function ease(t){var a=t<.5?4*t*t*t:1-Math.pow(2-2*t,3)/2,b=1-Math.pow(1-t,3.2);return (a+b)/2}
+function el(c,p){var x=document.createElement('div');x.className=c;if(p)p.appendChild(x);return x}
+function foc(){var h=S[i].querySelector('h1,h2');if(h)h.focus({preventScroll:true})}
+function settle(){clearTimeout(tm);if(fin){var f=fin;fin=null;f();if(f.foc)foc()}}
+function sh(a){return .62*Math.pow(Math.abs(Math.sin(a*Math.PI/180)),1.2)}
+function hl(a){return a<90?.34*Math.exp(-Math.pow((a-62)/20,2)):.2*Math.exp(-Math.pow((a-118)/20,2))}
+function flip(src,und,fw,dur){
+ var r=src.getBoundingClientRect(),u=und.getBoundingClientRect(),W=r.width,H=r.height,sw=W/N,
+ html=src.outerHTML.replace(/(id="|url\(#)([\w-]+)/g,'$1$2-k'),
+ stg=el('stage'),cw=el('cwrap',stg),cs=el('cast',cw),par=stg,sp=[],raf,k,s,x,c,t0;
+ stg.setAttribute('aria-hidden','true');stg.inert=true;
+ cw.style.cssText='left:'+u.left+'px;top:'+u.top+'px;width:'+u.width+'px;height:'+u.height+'px';
+ cs.style.width=u.width*.4+'px';
+ for(k=0;k<N;k++){
+  s=el('strip',par);
+  s.style.cssText=(k?'left:100%;top:0;':'left:'+r.left+'px;top:'+r.top+'px;')+'width:'+sw+'px;height:'+H+'px';
+  x=el('sc',s);x.innerHTML=html;c=x.firstChild;c.removeAttribute('hidden');
+  c.style.cssText='position:absolute;top:0;left:'+(-k*sw)+'px;width:'+W+'px;height:'+H+'px;min-height:0;margin:0;animation:none;transform:none;box-shadow:none';
+  el('shade',x);el('shade',el('sb',s));
+  sp.push(s);par=s;if(k==N-1)s.className+=' lst';
+ }
+ function draw(e){
+  var A=180*e,bd=64*Math.sin(Math.PI*Math.pow(e,.8)),X=0,Z=0,k,t=A,dl,xf,op;
+  for(k=0;k<N;k++){
+   dl=bd/(N-1)*(.5+k/(N-1));if(k)t+=dl;
+   sp[k].style.transform='rotateY('+(k?-dl:-A)+'deg)';
+   sp[k].style.setProperty('--a',sh(t-dl/2).toFixed(3));
+   sp[k].style.setProperty('--b',sh(t+dl/2).toFixed(3));
+   sp[k].style.setProperty('--ha',hl(t-dl/2).toFixed(3));
+   sp[k].style.setProperty('--hb',hl(t+dl/2).toFixed(3));
+   X+=sw*Math.cos(t*Math.PI/180);Z+=sw*Math.sin(t*Math.PI/180);
+  }
+  xf=innerWidth/2+(r.left+X-innerWidth/2)*P/(P-Z);
+  op=A<90?.75*Math.sin(A*Math.PI/180):Math.max(0,.75*(1-(A-90)/30));
+  cs.style.transform='translateX('+(xf-u.left)+'px)';
+  cs.style.opacity=op;
+  cw.style.backgroundColor='rgba(0,0,0,'+.16*(1-e)+')';
+  stg.style.opacity=e>.86?Math.max(0,(1-e)/.14):1;
+ }
+ function tick(n){var t=Math.max(0,Math.min(1,(n-t0)/dur)),q=ease(t);draw(fw?q:1-q);if(t<1)raf=requestAnimationFrame(tick);else settle()}
+ try{document.body.appendChild(stg);draw(fw?0:1)}catch(er){stg.remove();throw er}
+ t0=performance.now();raf=requestAnimationFrame(tick);
+ return function(){cancelAnimationFrame(raf);stg.remove()}
+}
+function play(sk){S.forEach(function(s){s.classList.remove('play','sk')});void mn.offsetWidth;S[i].classList.add('play');if(sk)S[i].classList.add('sk')}
+function prep(){
+ S.forEach(function(s){
+  var c=.25;
+  [].forEach.call(s.querySelectorAll('h1,h2,.lead,.facts>div,.grid>li,.rule>li,.flow>li,.two h3,.two li,tbody tr,.meta,.slide>p,figure'),function(e){
+   if(e.tagName==='FIGURE'){
+    var m=0,cap=e.querySelector('figcaption');
+    [].forEach.call(e.querySelectorAll('.dg .a,.dg .k'),function(g){
+     var d=parseFloat(g.style.getPropertyValue('--d'))||0;m=Math.max(m,d);
+     g.classList.add('t');g.style.setProperty('--dl',(c+d*2).toFixed(2)+'s')});
+    if(cap){cap.classList.add('t');cap.style.setProperty('--dl',(c+m*2+.6).toFixed(2)+'s')}
+    c+=m*2+.9;return}
+   e.classList.add('t');e.style.setProperty('--dl',c.toFixed(2)+'s');
+   c+=e.matches('.flow>li')?.2:.11});
+ });
+}
+function go(n,focus){
+ settle();
+ var o=i,ok=false,qk=performance.now()-lt<DUR+150;i=Math.max(0,Math.min(S.length-1,n));
+ if(ready&&i!==o&&!rm.matches){
+  var fw=i>o,a=S[o],b=S[i];
+  try{
+   mn.scrollTop=0;b.hidden=false;
+   lt=performance.now();var stop=flip(fw?a:b,fw?b:a,fw,qk?QUICK:DUR);
+   (fw?a:b).hidden=true;ok=true;
+   fin=function(){stop();S.forEach(function(s,k){s.hidden=k!==i});play(!fw)};
+   tm=setTimeout(settle,(qk?QUICK:DUR)+500);
+  }catch(er){}
+ }
+ if(!ok){S.forEach(function(s,k){s.hidden=k!==i});play(false)}
+ st.textContent='Diapositiva '+(i+1)+' de '+S.length+': '+S[i].getAttribute('aria-label');
+ pv.setAttribute('aria-disabled',i===0);nx.setAttribute('aria-disabled',i===S.length-1);
+ pg.style.width=((i+1)/S.length*100)+'%';
+ mn.scrollTop=0;
+ try{history.replaceState(null,'','#s'+(i+1))}catch(e){}
+ if(focus){if(fin)fin.foc=1;else foc()}
+}
+pv.addEventListener('click',function(){go(i-1,true)});
+nx.addEventListener('click',function(){go(i+1,true)});
+document.addEventListener('keydown',function(e){
+ if(e.altKey||e.ctrlKey||e.metaKey)return;
+ var k=e.key;
+ if(k==='ArrowRight'||k==='PageDown'){e.preventDefault();go(i+1,true)}
+ else if(k==='ArrowLeft'||k==='PageUp'){e.preventDefault();go(i-1,true)}
+ else if(k==='Home'){e.preventDefault();go(0,true)}
+ else if(k==='End'){e.preventDefault();go(S.length-1,true)}
+});
+function fromHash(){var m=/^#s(\d+)$/.exec(location.hash);return m?parseInt(m[1],10)-1:0}
+window.addEventListener('hashchange',function(){go(fromHash(),false)});
+document.getElementById('th').addEventListener('click',function(){
+ var dark=d.getAttribute('data-theme')?d.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+ d.setAttribute('data-theme',dark?'light':'dark');
+});
+S.forEach(function(s,k){
+ if(!k)return;
+ var r=document.createElement('div');r.className='run';r.setAttribute('aria-hidden','true');r.innerHTML='<span>Weazel News</span><span>Propuesta de consultoría</span>';s.insertBefore(r,s.firstChild);
+ var f=document.createElement('div');f.className='folio';f.setAttribute('aria-hidden','true');f.textContent=k+1;s.appendChild(f);
+});
+prep();go(fromHash(),false);ready=true;
+})();
+</script>
+</body>
+</html>
