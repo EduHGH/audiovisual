@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="artifact-type" content="narrative">
+  <meta name="design-style" content="weazel-editorial">
+  <title>Weazel News: Propuesta de consultoría para la revista semanal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap" rel="stylesheet">
+  <style>
+:root{--red:#F70A0A;--red-deep:#C40000;--rt:#C40000;--bg:#fff;--surface:#F0F0F7;--text:#000;--muted:#55555f;--line:#d6d6e0;
+--r-s:12px;--r-m:24px;--r-l:44px;--r-sq:22%;--pad-p:28px;--r-in:calc(var(--r-l) - var(--pad-p));
+--w:polygon(0 0,22.3% 12.4%,34.3% 47%,50.2% 11%,65.7% 47%,77.9% 12.4%,100% 0,65.6% 100%,50.2% 59.6%,33.6% 100%);
+--zig:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='13' viewBox='0 0 40 13'%3E%3Cpath d='M0 0 10 10 20 0 30 10 40 0V3L30 13 20 3 10 13 0 3Z'/%3E%3C/svg%3E");
+--display:"Archivo","Arial Narrow",Arial,sans-serif;--serif:"Source Serif 4",Georgia,serif;
+--background:var(--bg);--on-surface:var(--text);--on-surface-variant:var(--muted);--outline-variant:var(--line);--primary:var(--red);--on-primary:#fff;--data-1:var(--red);--data-2:var(--text);--font-headline:var(--display);--font-body:var(--serif);--rule-ink:2px solid var(--text);
+--display-size:clamp(2.8rem,8.4vw,6.4rem);--headline-size:clamp(2rem,5vw,3.2rem);--subhead-size:clamp(1.4rem,1.2rem + .8vw,1.75rem);--body-size:1.0625rem;--label-size:.85rem;
+--space-xs:.25rem;--space-sm:.5rem;--space-md:1rem;--space-lg:1.5rem;--space-xl:2.5rem;--space-2xl:4rem;--space-3xl:6rem;
+--ease-out:cubic-bezier(.16,1,.3,1);--dur-micro:120ms;--dur-short:220ms;
+color-scheme:light dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;--surface:#161618;--text:#fff;--muted:#a8a8b3;--line:#34343a;--rt:#FF6B6B}}
+:root[data-theme="dark"]{--bg:#000;--surface:#161618;--text:#fff;--muted:#a8a8b3;--line:#34343a;--rt:#FF6B6B}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth;overflow-x:clip}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 var(--body-size)/1.65 var(--serif);-webkit-font-smoothing:antialiased;overflow-x:clip}
+.page-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-2xl);padding:0 20px 20px;max-width:1120px;margin:0 auto}
+.page-grid *{min-width:0}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--red-deep);color:#fff;padding:8px 16px;font:700 .9rem var(--display);z-index:100;border-radius:0 0 var(--r-s) 0}
+.skip-link:focus{left:0}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+h1,h2,h3,h4{margin:0;color:var(--text);font-family:var(--display);font-stretch:72%;font-weight:900;line-height:.98;letter-spacing:-.01em}
+h1{font-size:var(--display-size)}h2{font-size:var(--headline-size)}h3{font-size:var(--subhead-size);line-height:1.05}
+p{margin:0 0 1em;max-width:65ch}p:last-child{margin-bottom:0}
+.lede{font:600 1.2rem/1.45 var(--serif);max-width:52ch;margin:0 0 var(--space-lg)}
+.label-voice,.kpi-label,.tag,.tag-ink,.kpi-delta,.milestone-name{font:700 var(--label-size)/1.3 var(--display);font-stretch:100%}
+.kpi-label{color:var(--muted);display:block}
+.tag,.tag-ink{color:var(--rt);display:inline-block}
+.tag{color:var(--muted)}
+.wb,.section-label::before,.section-open>h2::before,.pull-quote::before{content:"";display:inline-block;width:1.15em;aspect-ratio:773/627;background:var(--red);clip-path:var(--w);flex:none}
+.section-label{display:inline-flex;align-items:center;gap:.5em;background:var(--red-deep);color:#fff;font:800 .82rem var(--display);font-stretch:100%;padding:6px 14px 6px 10px;border-radius:999px;margin-bottom:var(--space-md)}
+.section-label::before{background:#fff;width:1em}
+.section-open>h2::before{width:.8em;margin-right:.3em;transform:translateY(-.04em)}
+.section-open>h2{display:flex;align-items:center;margin-bottom:var(--space-md)}
+.newspaper-header::after,.section-open::before,.newspaper-footer::before{content:"";display:block;height:13px;background:var(--text);-webkit-mask:var(--zig) repeat-x;mask:var(--zig) repeat-x}
+.newspaper-header::after{margin-top:var(--space-sm)}
+.newspaper-footer::before{background:var(--red);flex:0 0 100%}
+.section-open::before{margin-bottom:var(--space-xl)}
+/* cabecera */
+.newspaper-header{padding-top:var(--space-md)}
+.masthead-utility{display:flex;flex-wrap:wrap;gap:var(--space-xs) var(--space-lg);background:#000;color:#fff;border-radius:999px;padding:9px 22px;font:600 .8rem var(--display);margin-bottom:var(--space-md)}
+.masthead-utility strong{font-weight:800}
+.masthead-brand{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--space-md) var(--space-xl)}
+.weazel-lockup{display:flex;align-items:center;gap:14px}
+.logo{width:56px;aspect-ratio:1;border-radius:var(--r-sq);background:linear-gradient(var(--red) 0 57%,#fff 57%);box-shadow:0 0 0 1px rgba(0,0,0,.08),0 4px 10px rgba(0,0,0,.18);position:relative;flex:none}
+.logo::after{content:"";position:absolute;inset:22% 17% 11%;background:#000;clip-path:var(--w)}
+.wordmark b{display:block;font:900 clamp(1.8rem,5vw,2.6rem)/.95 var(--display);font-stretch:72%}
+.wordmark span{font:600 .85rem var(--display);color:var(--muted)}
+.masthead-meta-box{display:grid;grid-template-columns:repeat(2,minmax(0,auto));gap:var(--space-xs) var(--space-lg);background:var(--surface);border-radius:var(--r-m);padding:14px 22px;font:.85rem/1.35 var(--display)}
+.masthead-meta-item span{display:block;color:var(--muted);font-weight:600}
+.masthead-meta-item strong{font-weight:800}
+.edition-nav{display:flex;flex-wrap:wrap;gap:6px;padding-top:var(--space-md)}
+.edition-nav a{font:600 .9rem var(--display);color:var(--text);text-decoration:none;padding:8px 14px;border-radius:999px;transition:background var(--dur-micro),color var(--dur-micro)}
+.edition-nav a:hover,.edition-nav a:focus-visible,.edition-nav a.is-current{background:var(--red-deep);color:#fff;outline:none}
+/* portada */
+.hero-grid{display:grid;gap:var(--space-lg)}
+.hero{--bg:#fff;--text:#000;--muted:#55555f;--surface:#F0F0F7;border-radius:var(--r-l);overflow:hidden;position:relative;background:#fff;color:#000;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 20px 40px -20px rgba(0,0,0,.35)}
+.ht{background:var(--red);color:#fff;padding:48px 44px 100px}
+.ht h1{color:#fff;max-width:58%}
+.ht .section-label{background:#000}
+.hw{position:relative;height:0;z-index:2}
+.hw i{position:absolute;right:6%;top:0;transform:translateY(-52%);width:min(36%,380px);aspect-ratio:773/627;background:#000;clip-path:var(--w)}
+.hb{padding:92px 44px 44px;background:linear-gradient(#fff,#F4F4FA)}
+.hb .lede{max-width:52%;color:#111}
+.hero-aside{background:var(--surface);border-radius:var(--r-l);padding:var(--pad-p)}
+.hero-aside ul{max-width:70ch}
+.columns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.columns>*{background:var(--surface);border-radius:var(--r-m);padding:20px}
+.kpi-value{font:900 clamp(2.4rem,5vw,3.6rem)/1 var(--display);font-stretch:72%;font-variant-numeric:lining-nums tabular-nums;margin-block:var(--space-xs)}
+.kpi-delta{color:var(--muted);display:block;font-weight:600}
+.editorial-list{margin:var(--space-md) 0 0;padding-left:1.3rem}
+.editorial-list li{margin-bottom:var(--space-sm);padding-left:var(--space-xs)}
+.editorial-list li::marker{color:var(--red)}
+.pull-quote{font:italic 600 clamp(1.3rem,3vw,1.8rem)/1.25 var(--serif);background:var(--surface);border-radius:var(--r-l);padding:34px 30px;margin:var(--space-lg) 0;max-width:52ch}
+.pull-quote::before{display:block;width:2.2rem;margin-bottom:14px}
+.editorial-split,.editorial-split-even{display:grid;gap:var(--space-xl);align-items:start;margin-top:var(--space-md)}
+.editorial-split{grid-template-columns:minmax(0,1.05fr) minmax(0,1.25fr)}
+.editorial-split-even{grid-template-columns:repeat(2,minmax(0,1fr))}
+.editorial-col-ruled{background:var(--surface);border-radius:var(--r-m);padding:22px}
+.dossier-panel{background:var(--surface);border-radius:var(--r-l);padding:var(--pad-p)}
+.dossier-panel h3{margin-bottom:var(--space-xs)}
+/* botones */
+.btn-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:var(--space-md)}
+.btn{font:700 .9rem var(--display);padding:10px 20px;min-height:44px;border:0;border-radius:999px;background:var(--text);color:var(--bg);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:background var(--dur-micro)}
+.btn:hover{background:var(--red-deep);color:#fff}
+.btn.is-active,.btn-primary{background:var(--red-deep);color:#fff}
+.btn-primary:hover,.btn.is-active:hover{background:#000}
+/* selectores interactivos */
+.pillars-hub{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:var(--space-xl);align-items:start}
+.pillars-matrix{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:var(--space-md)}
+.pillar-btn,.milestone-step,.commercial-btn,.modality-card{text-align:left;font:inherit;color:var(--text);background:var(--surface);border:0;cursor:pointer;min-height:44px;transition:background var(--dur-micro),color var(--dur-micro)}
+.pillar-btn,.commercial-btn{border-radius:var(--r-m);padding:var(--space-md)}
+.chain-node,.output-cell{text-align:left;font:inherit;color:var(--text);background:var(--bg);border:0;cursor:pointer;min-height:44px;border-radius:var(--r-in);padding:var(--space-md);transition:background var(--dur-micro)}
+.pillar-btn:hover,.milestone-step:hover,.commercial-btn:hover,.modality-card:hover,.chain-node:hover,.output-cell:hover{background:var(--line)}
+.is-active,.is-selected{background:var(--red-deep)}
+.pillar-btn.is-active,.milestone-step.is-active,.commercial-btn.is-active,.modality-card.is-active,.chain-node.is-active,.output-cell.is-active,.anatomy-block.is-selected{background:var(--red-deep);color:#fff}
+.is-active *,.is-selected *{color:#fff}
+.pillar-btn-title,.chain-node-title{font:900 1.5rem/1 var(--display);font-stretch:72%;display:block;margin:var(--space-xs) 0}
+.chain-node-title{font-size:1.25rem}
+.pillar-btn-sub{font:.95rem/1.4 var(--serif);color:var(--muted);display:block}
+.chain-pipeline,.outputs-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:var(--space-md)}
+.milestones-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin-top:var(--space-md)}
+.milestone-step{border-radius:var(--r-s);padding:var(--space-md) 10px;display:flex;flex-direction:column}
+.milestone-num{font:900 1.8rem/1 var(--display);font-stretch:72%;color:var(--rt);margin-bottom:var(--space-xs)}
+.milestone-name{display:block;margin-bottom:var(--space-xs)}
+.milestone-timing{font:.85rem/1.35 var(--serif);color:var(--muted)}
+.commercial-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:var(--space-md)}
+.modality-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:var(--space-md)}
+.modality-card{border-radius:var(--r-m);padding:var(--space-lg)}
+.anatomy-canvas{background:var(--bg);border-radius:var(--r-l);padding:var(--space-md);box-shadow:0 0 0 2px var(--text);transition:max-width var(--dur-short) var(--ease-out)}
+.anatomy-canvas.mode-movil{max-width:360px}.anatomy-canvas.mode-boletin{max-width:540px}
+.anatomy-block{display:block;border:2px dashed var(--line);border-radius:var(--r-s);padding:var(--space-sm) var(--space-md);margin-bottom:var(--space-sm);cursor:pointer;width:100%;text-align:left;background:var(--bg);font:inherit;color:var(--text);min-height:44px}
+.anatomy-block:last-child{margin-bottom:0}
+.anatomy-block:hover{border-color:var(--text)}
+.anatomy-block.is-selected{border:2px solid var(--red-deep)}
+.anatomy-media-row{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:var(--space-sm);margin-bottom:var(--space-sm)}
+.anatomy-cols-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-sm)}
+.anatomy-canvas.mode-movil :is(.anatomy-media-row,.anatomy-cols-row),.anatomy-canvas.mode-boletin .anatomy-cols-row{grid-template-columns:minmax(0,1fr)}
+.anatomy-ad-slot{background:var(--surface)}
+/* tablas y listas */
+.broadsheet-table{width:100%;border-collapse:collapse;margin-top:var(--space-md);border-top:3px solid var(--text)}
+.broadsheet-table th{font:700 var(--label-size) var(--display);color:var(--muted);text-align:left;padding:10px 8px;border-bottom:1px solid var(--line)}
+.broadsheet-table td{padding:12px 8px;border-bottom:1px solid var(--line);vertical-align:top;font-size:.98rem}
+.broadsheet-table tr:last-child td{border-bottom:0}
+.broadsheet-table .num-col{text-align:right;font:900 1.2rem var(--display);font-stretch:72%;font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
+.broadsheet-table tr.is-highlighted td{background:var(--surface)}
+.broadsheet-table tr.is-highlighted td:first-child{box-shadow:inset 5px 0 0 var(--red)}
+.chart-wrapper{min-height:290px;margin-top:var(--space-md)}
+.phase-svg{width:100%;height:auto;display:block}
+.deliverables-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 var(--space-xl);border-top:3px solid var(--text);margin-top:var(--space-md)}
+.deliverable-item{padding-block:var(--space-md);border-bottom:1px solid var(--line)}
+.steps-list{list-style:none;margin:var(--space-md) 0 0;padding:0;border-top:3px solid var(--text)}
+.step-row{border-bottom:1px solid var(--line);padding-block:var(--space-sm);display:flex;align-items:center;gap:var(--space-md)}
+.step-toggle{display:inline-flex;align-items:center;gap:var(--space-md);background:transparent;border:0;padding:var(--space-xs) 0;min-height:44px;cursor:pointer;text-align:left;font:inherit;color:var(--text);width:100%}
+.step-box{width:26px;height:26px;border:2px solid var(--text);border-radius:22%;display:inline-flex;align-items:center;justify-content:center;flex:none;font:800 .9rem var(--display)}
+.step-toggle.is-done .step-box{background:var(--red-deep);border-color:var(--red-deep);color:#fff}
+.step-toggle.is-done .step-text{text-decoration:line-through;color:var(--muted)}
+.newspaper-footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--space-md);padding-bottom:var(--space-xl);font:500 .9rem var(--display);color:var(--muted)}
+@media(max-width:960px){.pillars-hub,.editorial-split,.editorial-split-even{grid-template-columns:minmax(0,1fr)}
+.columns{grid-template-columns:repeat(2,minmax(0,1fr))}.milestones-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.chain-pipeline,.outputs-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.modality-cards{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:640px){:root{--pad-p:20px}.page-grid{padding:0 14px 14px;gap:var(--space-xl)}
+.ht{padding:36px 24px 14vw}.ht h1{max-width:100%}.hb{padding:15vw 24px 32px}.hb .lede{max-width:100%}.hw i{width:52%}
+.masthead-utility{border-radius:var(--r-m)}.columns,.pillars-matrix,.commercial-steps,.deliverables-grid{grid-template-columns:minmax(0,1fr)}
+.pull-quote{padding:26px 22px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+.edition-nav a{min-height:44px;display:inline-flex;align-items:center}
+:root[data-theme="dark"]{--line:#2a2a30}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--line:#2a2a30}}
+.pillar-btn.is-active,.milestone-step.is-active,.commercial-btn.is-active,.modality-card.is-active,.chain-node.is-active,.output-cell.is-active,.btn.is-active{box-shadow:inset 0 0 0 3px var(--text)}
+.broadsheet-table tr[tabindex]:focus-visible{outline:3px solid var(--red);outline-offset:-3px}
+@media(forced-colors:active){.is-active,.is-selected,.is-highlighted,.is-done .step-box{outline:3px solid Highlight}.logo,.hw i,.wb{forced-color-adjust:none}}
+
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + var(--bar-h,64px) + 16px)}
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);box-shadow:0 1px 0 var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:49}
+.topbar-in{max-width:1120px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;gap:12px}
+.tb-brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;border-radius:var(--r-s);flex:none}
+.tb-brand .logo{width:36px}
+.tb-brand b{font:900 1.3rem/1 var(--display);font-stretch:72%}
+.tb-quick{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.tb-quick a,.tb-list a{font:600 .9rem var(--display);color:var(--text);text-decoration:none;padding:0 14px;min-height:44px;display:inline-flex;align-items:center;border-radius:999px;white-space:nowrap}
+.tb-quick a:hover,.tb-list a:hover{background:var(--surface)}
+.tb-quick a[aria-current],.tb-list a[aria-current]{background:var(--red-deep);color:#fff}
+.tb-actions{display:flex;align-items:center;gap:8px;flex:none}
+.tb-btn{font:700 .9rem var(--display);display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;min-width:44px;padding:0 16px;border:0;border-radius:999px;background:var(--text);color:var(--bg);cursor:pointer}
+.tb-btn:hover{background:var(--red-deep);color:#fff}
+.tb-theme{padding:0}
+.tb-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+.tb-menu{position:relative}
+.tb-list{position:absolute;right:0;top:calc(100% + 10px);list-style:none;margin:0;padding:12px;min-width:250px;background:var(--surface);border-radius:var(--r-m);box-shadow:0 0 0 1px var(--line),0 20px 40px -20px rgba(0,0,0,.45)}
+.tb-list[hidden]{display:none}
+.tb-list a{display:flex;border-radius:var(--r-s)}
+.tb-theme .i-sun{display:none}
+.tb-theme[aria-checked="true"] .i-sun{display:block}
+.tb-theme[aria-checked="true"] .i-moon{display:none}
+.newspaper-header{padding-top:var(--space-xl)}
+@media(max-width:760px){.topbar-in{flex-wrap:wrap;row-gap:0}.tb-actions{margin-left:auto}.tb-quick{order:3;flex:0 0 100%;margin-left:0}.tb-brand b{font-size:1.15rem}}
+.pillar-btn.is-active *,.pillar-btn.is-selected *,.milestone-step.is-active *,.milestone-step.is-selected *,.commercial-btn.is-active *,.commercial-btn.is-selected *,.modality-card.is-active *,.modality-card.is-selected *,.chain-node.is-active *,.chain-node.is-selected *,.output-cell.is-active *,.output-cell.is-selected *,.anatomy-block.is-active *,.anatomy-block.is-selected *{color:#fff}
+
+/* compactación: cada bloque cabe en una pantalla */
+:root{--pad-p:22px;--display-size:clamp(2rem,min(4.6vw,7.5vh),3.8rem);--headline-size:clamp(1.7rem,min(3.6vw,5.5vh),2.5rem)}
+.page-grid{gap:var(--space-xl)}
+.newspaper-header{padding-top:var(--space-md)}
+.section-open::before{margin-bottom:var(--space-md)}
+.section-open>h2{margin-bottom:var(--space-sm)}
+.ht{padding:32px 40px 72px}
+.ht h1{max-width:64%}
+.ht .section-label{margin-bottom:var(--space-sm)}
+.hw i{width:min(30%,300px)}
+.hb{padding:64px 40px 28px}
+.hb .lede{font-size:1.05rem;line-height:1.45;max-width:56%;margin-bottom:var(--space-md)}
+.hb .btn-row{margin-bottom:0}
+.hero-aside{padding:var(--pad-p);font-size:.95rem}
+.hero-aside .editorial-list{margin-top:var(--space-sm)}
+.hero-aside .editorial-list li{margin-bottom:4px}
+.columns>*{padding:14px 18px}
+.kpi-value{font-size:clamp(1.8rem,4.5vh,2.6rem)}
+.editorial-split,.editorial-split-even{gap:var(--space-lg);margin-top:var(--space-sm)}
+.editorial-list li{margin-bottom:6px}
+.dossier-panel,.editorial-col-ruled{padding:var(--pad-p)}
+.pillar-btn,.commercial-btn{padding:12px 14px}
+.pillar-btn-title{font-size:1.3rem}
+.milestone-step{padding:12px 10px}
+.modality-card{padding:var(--space-md)}
+.pull-quote{padding:20px 24px;margin:var(--space-md) 0}
+.pull-quote::before{margin-bottom:8px}
+.deliverable-item{padding-block:10px}
+.broadsheet-table td{padding:8px}
+.chart-wrapper{min-height:0}
+.step-row{padding-block:2px}
+@media(min-width:1000px){
+.hero-grid{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);align-items:stretch}
+.hero-aside{display:flex;flex-direction:column;justify-content:center}
+}
+@media(max-width:999px){.ht h1{max-width:100%}.hb .lede{max-width:100%}.ht{padding:28px 24px 14vw}.hb{padding:15vw 24px 28px}.hw i{width:50%}}
+@media(max-height:760px) and (min-width:1000px){.ht{padding:24px 40px 56px}.hb{padding:50px 40px 20px}.hero-aside{font-size:.9rem}}
+
+/* animación y diagramas */
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:translateY(-52%) scale(.6) rotate(-8deg)}to{opacity:1;transform:translateY(-52%)}}
+@keyframes ring{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.32,1.4);opacity:0}}
+@keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ht h1{animation:rise .7s var(--ease-out) both}
+.hw i{animation:pop .8s .15s var(--ease-out) both}
+.diag{margin:0;background:var(--surface);border-radius:var(--r-l);padding:var(--space-md) var(--space-lg) var(--space-sm)}
+.diag svg{display:block;width:100%;height:auto;max-height:230px}
+.diag figcaption{font:600 .85rem var(--display);color:var(--muted);text-align:center;margin-top:6px}
+.diag text{font-family:var(--display);font-weight:700;font-size:16px;fill:var(--text)}
+.diag .dn rect{fill:var(--bg);stroke:var(--text);stroke-width:2}
+.diag .dc{fill:var(--red-deep)}
+.diag .dct{fill:#fff;font-weight:900;font-size:22px;font-stretch:72%}
+.diag .dw{fill:#fff}
+.diag .dp{fill:none;stroke:var(--text);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:0}
+.diag .dd{fill:var(--red)}
+.diag .dpulse rect{fill:none;stroke:var(--red);stroke-width:3;transform-box:fill-box;transform-origin:center;animation:ring 2.6s ease-out infinite}
+.js .diag:not(.in) .dp{stroke-dashoffset:1}
+.js .diag:not(.in) .dn,.js .diag:not(.in) .dd{opacity:0}
+.diag .dp{transition:stroke-dashoffset 1.1s var(--ease-out) .2s}
+.diag .dn{animation:fadein .5s calc(var(--i)*70ms) var(--ease-out) both;animation-play-state:paused}
+.diag.in .dn{animation-play-state:running}
+.js .phase-svg rect[fill^="var(--data"]{transform-box:fill-box;transform-origin:left center;transition:transform .9s var(--ease-out)}
+.js .phase-svg:not(.in) rect[fill^="var(--data"]{transform:scaleX(0)}
+.milestones-grid{position:relative}
+.milestones-grid::before{content:"";position:absolute;left:0;right:0;top:-6px;height:4px;border-radius:4px;background:var(--red);transform-origin:left;transition:transform 1.6s var(--ease-out)}
+.js .milestones-grid:not(.in)::before{transform:scaleX(0)}
+@media(max-width:640px){.diag{padding:var(--space-sm)}.diag text{font-size:20px}}
+.pillar-btn.is-active,.pillar-btn.is-active *,.pillar-btn.is-selected,.pillar-btn.is-selected *,.milestone-step.is-active,.milestone-step.is-active *,.milestone-step.is-selected,.milestone-step.is-selected *,.commercial-btn.is-active,.commercial-btn.is-active *,.commercial-btn.is-selected,.commercial-btn.is-selected *,.modality-card.is-active,.modality-card.is-active *,.modality-card.is-selected,.modality-card.is-selected *,.chain-node.is-active,.chain-node.is-active *,.chain-node.is-selected,.chain-node.is-selected *,.output-cell.is-active,.output-cell.is-active *,.output-cell.is-selected,.output-cell.is-selected *,.anatomy-block.is-active,.anatomy-block.is-active *,.anatomy-block.is-selected,.anatomy-block.is-selected *{color:#fff!important}
+
+/* más aire y espacio negativo */
+:root{--pad-p:36px}
+body{line-height:1.75}
+.page-grid{gap:clamp(4.5rem,9vw,7.5rem);padding:0 clamp(20px,4vw,40px) 40px}
+.newspaper-header{padding-top:var(--space-lg)}
+.masthead-brand{padding-block:var(--space-md)}
+.section-open::before{margin-bottom:var(--space-xl)}
+.section-open>h2{margin-bottom:var(--space-lg)}
+.section-open>*+*{margin-top:var(--space-lg)}
+.section-open>h2+*{margin-top:0}
+.ht{padding:48px 56px 88px}
+.hb{padding:80px 56px 48px}
+.hb .lede{margin-bottom:var(--space-lg)}
+.hero-grid{gap:var(--space-xl)}
+.hero-aside{padding:var(--pad-p);font-size:1rem}
+.hero-aside .editorial-list li{margin-bottom:10px}
+.columns{gap:var(--space-md)}
+.columns>*{padding:28px 26px}
+.pillars-hub{gap:var(--space-2xl)}
+.pillars-matrix,.commercial-steps,.modality-cards{gap:var(--space-md);margin-top:var(--space-lg)}
+.chain-pipeline,.outputs-strip,.milestones-grid{gap:var(--space-sm);margin-top:var(--space-lg)}
+.pillar-btn,.commercial-btn{padding:var(--space-lg)}
+.milestone-step{padding:var(--space-md) 12px}
+.modality-card{padding:var(--space-xl) var(--space-lg)}
+.dossier-panel,.editorial-col-ruled{padding:var(--pad-p)}
+.dossier-panel h3{margin-bottom:var(--space-sm)}
+.editorial-split,.editorial-split-even{gap:var(--space-2xl);margin-top:var(--space-lg)}
+.editorial-list li{margin-bottom:12px}
+.pull-quote{padding:40px 40px;margin:var(--space-xl) 0}
+.diag{padding:var(--space-xl) var(--space-xl) var(--space-lg)}
+.diag figcaption{margin-top:var(--space-md)}
+.deliverables-grid{gap:0 var(--space-2xl);margin-top:var(--space-lg)}
+.deliverable-item{padding-block:var(--space-lg)}
+.broadsheet-table td{padding:16px 12px}
+.broadsheet-table th{padding:14px 12px}
+.chart-wrapper{margin-top:var(--space-lg)}
+.step-row{padding-block:var(--space-sm)}
+.newspaper-footer{padding-top:var(--space-lg);padding-bottom:var(--space-3xl)}
+p{margin-bottom:1.2em}
+@media(max-width:999px){.ht{padding:36px 28px 14vw}.hb{padding:15vw 28px 36px}}
+@media(max-width:640px){:root{--pad-p:24px}.page-grid{gap:4rem;padding:0 16px 24px}.ht{padding:32px 24px 14vw}.hb{padding:15vw 24px 32px}.pull-quote{padding:28px 24px}.columns>*{padding:20px}.diag{padding:var(--space-md)}.modality-card{padding:var(--space-lg)}}
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <div class="topbar" id="topbar"><div class="topbar-in">
+<a class="tb-brand" href="#portada" aria-label="Weazel News, ir a la portada"><span class="logo" aria-hidden="true"></span><b>Weazel News</b></a>
+<nav class="tb-quick" aria-label="Secciones principales"><a href="#pilar-tecnico">Técnica</a><a href="#pilar-organizativo">Organizativa</a><a href="#pilar-diseno">Diseño</a><a href="#pilar-publicidad">Publicidad</a></nav>
+<div class="tb-actions">
+<div class="tb-menu"><button type="button" class="tb-btn" id="menuBtn" aria-expanded="false" aria-controls="menuList"><span>Menú</span><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 5.5 8 11l5-5.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<ul class="tb-list" id="menuList" hidden><li><a href="#portada">Portada</a></li><li><a href="#pilar-tecnico">I. Técnica</a></li><li><a href="#pilar-organizativo">II. Organizativa</a></li><li><a href="#pilar-diseno">III. Diseño de formatos</a></li><li><a href="#pilar-publicidad">IV. Publicidad</a></li><li><a href="#cronograma">Cronograma y métricas</a></li><li><a href="#inversion">Inversión y pasos</a></li></ul></div>
+<button type="button" class="tb-btn tb-theme" id="themeBtn" role="switch" aria-checked="false" aria-label="Tema oscuro"><svg class="i-sun" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="i-moon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" fill="currentColor"/></svg></button>
+</div></div></div>
+  <div class="page-grid">
+    <!-- CABECERA PRINCIPAL / MASTHEAD -->
+    <header class="newspaper-header" role="banner">
+      <div class="masthead-utility">
+        <span><strong>Edición especial de consultoría</strong> · Revista semanal</span>
+        <span>Fecha: <strong>19 de noviembre de 2026</strong></span>
+        <span>Validez de la propuesta: <strong>30 días</strong></span>
+      </div>
+
+      <div class="masthead-brand">
+        <div class="weazel-lockup">
+          <!-- Logotipo oficial vectorial fiel a la identidad visual de WEAZEL NEWS -->
+          <div class="logo" aria-hidden="true"></div><div class="wordmark"><b>Weazel News</b><span>Propuesta integral para la revista semanal</span></div>
+        </div>
+
+        <div class="masthead-meta-box" aria-label="Ficha de la propuesta">
+          <div class="masthead-meta-item">
+            <span>Para</span>
+            <strong>Weazel News</strong>
+          </div>
+          <div class="masthead-meta-item">
+            <span>Preparada por</span>
+            <strong>Fred</strong>
+          </div>
+          <div class="masthead-meta-item">
+            <span>Alcance</span>
+            <strong>4 frentes · 4 fases</strong>
+          </div>
+          <div class="masthead-meta-item">
+            <span>Horizonte</span>
+            <strong>15–21 semanas</strong>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- PORTADA: TESIS Y LOS 4 PILARES -->
+      <section id="portada" aria-labelledby="portada-titulo">
+        <div class="hero-grid"><div class="hero"><div class="ht"><span class="section-label">Consultoría integral para la revista semanal</span><h1 id="portada-titulo">Una sola propuesta para que cada edición se produzca mejor, se lea mejor y se financie mejor</h1></div><div class="hw" aria-hidden="true"><i></i></div><div class="hb"><p class="lede">
+              Técnica, organizativa, de diseño de formatos y de publicidad: cuatro frentes coordinados para transformar cierres ajustados y herramientas dispersas en un sistema editorial rentable y autónomo.
+            </p><div class="btn-row">
+              <a class="btn btn-primary" href="#pilar-tecnico" style="text-decoration: none;">Explorar los cuatro pilares</a>
+              <a class="btn" href="#inversion" style="text-decoration: none;">Ver modalidades e inversión</a>
+            </div></div></div><aside class="hero-aside" aria-label="Diagnóstico de partida y objetivos">
+            <span class="tag-ink">Qué quiero conseguir</span>
+            <h2 style="font-size: var(--subhead-size); margin-top: var(--space-xs); margin-bottom: var(--space-sm);">De la inercia semanal al criterio propio</h2>
+            <p style="font-size: 0.98rem; color: var(--on-surface-variant);">
+              Weazel News cuenta ya con una revista de <strong>identidad y lectores fieles</strong>, pero arrastra <strong>cierres ajustados</strong>, <strong>herramientas dispersas</strong> y <strong>publicidad vendida por inercia</strong>. Esta consultoría persigue cinco metas concretas:
+            </p>
+            <ul class="editorial-list" style="font-size: 0.96rem;">
+              <li><strong>Reducir el tiempo y el esfuerzo</strong> de producción de cada edición.</li>
+              <li>Establecer un <strong>sistema de diseño reutilizable</strong> en todos los soportes.</li>
+              <li>Clarificar <strong>roles, responsabilidades y calendario</strong> semanal.</li>
+              <li><strong>Profesionalizar la oferta publicitaria</strong> sin dañar la experiencia del lector.</li>
+              <li>Dejar al equipo con <strong>documentación y criterios propios</strong>.</li>
+            </ul>
+          </aside></div>
+
+        <!-- Tira de cifras clave con filetes verticales -->
+        <div class="columns" aria-label="Cifras estructurales del plan">
+          <div>
+            <span class="kpi-label">Frentes integrados</span>
+            <div class="kpi-value">4</div>
+            <span class="kpi-delta">Técnica · Org · Diseño · Comercial</span>
+          </div>
+          <div>
+            <span class="kpi-label">Hitos semanales fijos</span>
+            <div class="kpi-value">7</div>
+            <span class="kpi-delta">Con responsable y plazo definidos</span>
+          </div>
+          <div>
+            <span class="kpi-label">Duración estimada</span>
+            <div class="kpi-value">15–21</div>
+            <span class="kpi-delta">Semanas en 4 fases continuas</span>
+          </div>
+          <div>
+            <span class="kpi-label">Ediciones de piloto</span>
+            <div class="kpi-value">3–4</div>
+            <span class="kpi-delta">Pruebas reales sin frenar la salida</span>
+          </div>
+        </div>
+
+        <figure class="diag" aria-labelledby="diag-cap">
+<svg viewBox="0 0 900 230" role="img" aria-label="Diagrama: los cuatro frentes de consultoría (técnica, organizativa, diseño de formatos y publicidad) alimentan la revista semanal, que se publica en impreso y PDF, web, móvil y boletín.">
+<path class="dp" pathLength="1" d="M212 31 C290 31 290 115 365 115"/><path class="dp" pathLength="1" d="M535 115 C610 115 610 31 688 31"/><path class="dp" pathLength="1" d="M212 87 C290 87 290 115 365 115"/><path class="dp" pathLength="1" d="M535 115 C610 115 610 87 688 87"/><path class="dp" pathLength="1" d="M212 143 C290 143 290 115 365 115"/><path class="dp" pathLength="1" d="M535 115 C610 115 610 143 688 143"/><path class="dp" pathLength="1" d="M212 199 C290 199 290 115 365 115"/><path class="dp" pathLength="1" d="M535 115 C610 115 610 199 688 199"/><g class="dpulse"><rect x="365" y="55" width="170" height="120" rx="30"/></g>
+<rect class="dc" x="365" y="55" width="170" height="120" rx="30"/>
+<polygon class="dw" points="450,76 458,76 463,100 468,82 473,82 478,100 483,76 491,76 482,114 475,114 471,98 466,114 459,114"/>
+<text class="dct" x="450" y="142" text-anchor="middle">Revista</text><text class="dct" x="450" y="163" text-anchor="middle">semanal</text>
+<g class="dn" style="--i:0"><rect x="12" y="9" width="200" height="44" rx="14"/><text x="112" y="36" text-anchor="middle">Técnica</text></g><g class="dn" style="--i:4"><rect x="688" y="9" width="200" height="44" rx="14"/><text x="788" y="36" text-anchor="middle">Impreso y PDF</text></g><g class="dn" style="--i:1"><rect x="12" y="65" width="200" height="44" rx="14"/><text x="112" y="92" text-anchor="middle">Organizativa</text></g><g class="dn" style="--i:5"><rect x="688" y="65" width="200" height="44" rx="14"/><text x="788" y="92" text-anchor="middle">Web</text></g><g class="dn" style="--i:2"><rect x="12" y="121" width="200" height="44" rx="14"/><text x="112" y="148" text-anchor="middle">Diseño de formatos</text></g><g class="dn" style="--i:6"><rect x="688" y="121" width="200" height="44" rx="14"/><text x="788" y="148" text-anchor="middle">Móvil</text></g><g class="dn" style="--i:3"><rect x="12" y="177" width="200" height="44" rx="14"/><text x="112" y="204" text-anchor="middle">Publicidad</text></g><g class="dn" style="--i:7"><rect x="688" y="177" width="200" height="44" rx="14"/><text x="788" y="204" text-anchor="middle">Boletín</text></g><circle r="5" class="dd"><animateMotion dur="3.2s" begin="0.0s" repeatCount="indefinite" path="M212 31 C290 31 290 115 365 115"/></circle><circle r="5" class="dd"><animateMotion dur="3.2s" begin="1.6s" repeatCount="indefinite" path="M535 115 C610 115 610 31 688 31"/></circle><circle r="5" class="dd"><animateMotion dur="3.2s" begin="0.5s" repeatCount="indefinite" path="M212 87 C290 87 290 115 365 115"/></circle><circle r="5" class="dd"><animateMotion dur="3.2s" begin="2.1s" repeatCount="indefinite" path="M535 115 C610 115 610 87 688 87"/></circle><circle r="5" class="dd"><animateMotion dur="3.2s" begin="1.0s" repeatCount="indefinite" path="M212 143 C290 143 290 115 365 115"/></circle><circle r="5" class="dd"><animateMotion dur="3.2s" begin="2.6s" repeatCount="indefinite" path="M535 115 C610 115 610 143 688 143"/></circle><circle r="5" class="dd"><animateMotion dur="3.2s" begin="1.5s" repeatCount="indefinite" path="M212 199 C290 199 290 115 365 115"/></circle><circle r="5" class="dd"><animateMotion dur="3.2s" begin="3.1s" repeatCount="indefinite" path="M535 115 C610 115 610 199 688 199"/></circle></svg>
+<figcaption id="diag-cap">Cuatro frentes alimentan una sola revista, que sale por cuatro soportes.</figcaption></figure>
+        <!-- Mapa interactivo de los 4 Pilares -->
+        <div class="pillars-hub" aria-label="Mapa interactivo de los cuatro frentes">
+          <div>
+            <span class="section-label">Arquitectura de la propuesta</span>
+            <h3>Cuatro frentes que se refuerzan entre sí</h3>
+            <p style="margin-top: var(--space-xs); color: var(--on-surface-variant);">
+              La revista semanal ocupa el centro. Selecciona cualquier frente para inspeccionar su alcance, su entregable clave y su conexión directa con los demás pilares.
+            </p>
+
+            <div class="pillars-matrix" role="group" aria-label="Selector de pilar de consultoría">
+              <button type="button" class="pillar-btn is-active" onclick="selectPillar('tecnica', this)" aria-pressed="true" id="tab-pilar-tecnica">
+                <span class="tag">Pilar 01</span>
+                <span class="pillar-btn-title">Técnica</span>
+                <span class="pillar-btn-sub">Producción, distribución multicanal y analítica de cada edición.</span>
+              </button>
+              <button type="button" class="pillar-btn" onclick="selectPillar('organizativa', this)" aria-pressed="false" id="tab-pilar-organizativa">
+                <span class="tag">Pilar 02</span>
+                <span class="pillar-btn-title">Organizativa</span>
+                <span class="pillar-btn-sub">Roles, calendario editorial de 7 hitos y flujos de cierre.</span>
+              </button>
+              <button type="button" class="pillar-btn" onclick="selectPillar('diseno', this)" aria-pressed="false" id="tab-pilar-diseno">
+                <span class="tag">Pilar 03</span>
+                <span class="pillar-btn-title">Diseño de formatos</span>
+                <span class="pillar-btn-sub">Un sistema visual coherente para impreso, web, móvil y boletín.</span>
+              </button>
+              <button type="button" class="pillar-btn" onclick="selectPillar('publicidad', this)" aria-pressed="false" id="tab-pilar-publicidad">
+                <span class="tag">Pilar 04</span>
+                <span class="pillar-btn-title">Publicidad</span>
+                <span class="pillar-btn-sub">Oferta comercial clara, medible y respetuosa con el lector.</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="dossier-panel" id="pillar-detail-panel" aria-live="polite">
+            <span class="section-label" id="pillar-kicker">Frente 01 · Consultoría Técnica</span>
+            <h3 id="pillar-title">De la redacción al lector en una sola cadena</h3>
+            <p id="pillar-summary" style="margin-top: var(--space-sm);">
+              Reviso la cadena completa de producción: gestor de contenidos (CMS), maquetación y archivos para eliminar pasos duplicados y medir las cuatro salidas en un único panel semanal.
+            </p>
+            <div style="border-top: var(--rule-ink); padding-top: var(--space-sm); margin-top: var(--space-md);">
+              <span class="kpi-label">Entregable clave</span>
+              <p id="pillar-deliverable" style="margin-top: var(--space-xs); font-weight: 600;">Arquitectura técnica, automatizaciones multicanal y guía de configuración.</p>
+              <span class="kpi-label" style="margin-top: var(--space-sm);">Indicador de éxito</span>
+              <p id="pillar-metric" style="margin-top: var(--space-xs);">Mayor apertura del boletín, cumplimiento RGPD/SEO y lectura unificada por soporte.</p>
+              <div style="margin-top: var(--space-md);">
+                <a id="pillar-anchor" href="#pilar-tecnico" class="btn" style="text-decoration: none;">Ir a la sección completa</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN I: CONSULTORÍA TÉCNICA -->
+      <section id="pilar-tecnico" class="section-open" aria-labelledby="tecnico-titulo">
+        <span class="section-label">Frente I · Consultoría técnica</span>
+        <h2 id="tecnico-titulo">Revisión completa de la cadena, de la redacción al lector</h2>
+
+        <div class="editorial-split">
+          <div>
+            <p>
+              Cuando cada soporte vive en herramientas aisladas, el equipo multiplica el trabajo manual justo antes del cierre. La consultoría técnica unifica el recorrido completo para que una sola cadena de producción alimente todas las salidas y se mida en un único panel.
+            </p>
+            <ul class="editorial-list">
+              <li><strong>Auditoría de la cadena de producción:</strong> gestor de contenidos, maquetación y archivos.</li>
+              <li><strong>Revisión de salidas:</strong> PDF e impreso, web, móvil y boletín.</li>
+              <li><strong>Automatización</strong> de tareas repetitivas y <strong>publicación multicanal</strong>.</li>
+              <li><strong>Panel semanal</strong> de lectura, suscripción y rendimiento publicitario.</li>
+              <li><strong>Rendimiento, accesibilidad, SEO, seguridad</strong> y cumplimiento del RGPD.</li>
+            </ul>
+          </div>
+
+          <div class="dossier-panel">
+            <span class="section-label">Arquitectura objetivo interactiva</span>
+            <h3>Del texto al lector</h3>
+            <p style="font-size: 0.96rem; color: var(--on-surface-variant); margin-top: var(--space-xs);">
+              Pulsa en cada eslabón de la cadena o en cualquiera de las cuatro salidas para inspeccionar su función técnica y analítica.
+            </p>
+
+            <div class="chain-pipeline" role="group" aria-label="Eslabones de la cadena de producción">
+              <button type="button" class="chain-node is-active" onclick="selectChainNode('redaccion', this)">
+                <span class="tag-ink">Paso 1</span>
+                <span class="chain-node-title">Redacción</span>
+              </button>
+              <button type="button" class="chain-node" onclick="selectChainNode('cms', this)">
+                <span class="tag-ink">Paso 2</span>
+                <span class="chain-node-title">CMS</span>
+              </button>
+              <button type="button" class="chain-node" onclick="selectChainNode('plantillas', this)">
+                <span class="tag-ink">Paso 3</span>
+                <span class="chain-node-title">Plantillas</span>
+              </button>
+              <button type="button" class="chain-node" onclick="selectChainNode('analitica', this)">
+                <span class="tag-ink">Paso 4</span>
+                <span class="chain-node-title">Analítica común</span>
+              </button>
+            </div>
+
+            <div class="outputs-strip" role="group" aria-label="Cuatro salidas de publicación">
+              <button type="button" class="output-cell is-active" onclick="selectOutput('impreso', this)">
+                <span class="kpi-label">Salida A</span>
+                <strong>Impreso y PDF</strong>
+              </button>
+              <button type="button" class="output-cell" onclick="selectOutput('web', this)">
+                <span class="kpi-label">Salida B</span>
+                <strong>Web</strong>
+              </button>
+              <button type="button" class="output-cell" onclick="selectOutput('movil', this)">
+                <span class="kpi-label">Salida C</span>
+                <strong>Móvil</strong>
+              </button>
+              <button type="button" class="output-cell" onclick="selectOutput('boletin', this)">
+                <span class="kpi-label">Salida D</span>
+                <strong>Boletín</strong>
+              </button>
+            </div>
+
+            <div id="chain-inspector" style="border-top: var(--rule-ink); margin-top: var(--space-md); padding-top: var(--space-sm);" aria-live="polite">
+              <span class="kpi-label" id="chain-inspector-label">Eslabón activo: Redacción + Salida Impreso y PDF</span>
+              <p id="chain-inspector-text" style="margin-top: var(--space-xs); font-size: 0.98rem;">
+                La redacción introduce textos e imágenes estructurados desde el origen (titular, entradilla, cita, pie de foto). Al pasar por el CMS y las plantillas maestras, la salida en Impreso y PDF hereda la retícula exacta sin rehacer archivos a mano.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN II: CONSULTORÍA ORGANIZATIVA -->
+      <section id="pilar-organizativo" class="section-open" aria-labelledby="org-titulo">
+        <span class="section-label">Frente II · Consultoría organizativa</span>
+        <h2 id="org-titulo">Menos cuellos de botella y un calendario que todo el equipo sigue</h2>
+
+        <div class="editorial-split-even">
+          <div>
+            <p>
+              La falta de plazos intermedios claros concentra las correcciones y el estrés en las últimas horas antes de publicar. La consultoría ordena el trabajo semanal diferenciando ritmos según la naturaleza de cada pieza y blindando el rigor periodístico.
+            </p>
+            <ul class="editorial-list">
+              <li><strong>Diagnóstico de roles, dependencias y cuellos de botella</strong>.</li>
+              <li><strong>Calendario editorial semanal</strong> con hitos de encargo, revisión, cierre y publicación.</li>
+              <li><strong>Flujos distintos</strong> para actualidad, reportajes de eventos y piezas de fondo.</li>
+              <li><strong>Guía de estilo y de verificación:</strong> fuentes, correcciones y titulación.</li>
+              <li><strong>Separación clara</strong> entre contenido editorial y publicitario.</li>
+              <li><strong>Formación práctica</strong> y materiales de consulta rápida.</li>
+            </ul>
+          </div>
+
+          <div>
+            <blockquote class="pull-quote">
+              «Actualidad, reportajes de eventos y piezas de fondo siguen el mismo ciclo de siete hitos fijos, pero cada formato opera con tiempos distintos.»
+            </blockquote>
+            <p style="color: var(--on-surface-variant);">
+              Selecciona un tipo de pieza y recorre cualquiera de los siete hitos abajo para comprobar cómo se distribuyen las responsabilidades y los plazos a lo largo de la semana.
+            </p>
+          </div>
+        </div>
+
+        <!-- Simulador interactivo del ciclo semanal -->
+        <div style="margin-top: var(--space-lg);">
+          <div class="btn-row" role="group" aria-label="Seleccionar flujo editorial por tipo de pieza">
+            <span class="label-voice" style="margin-right: var(--space-sm); color: var(--on-surface-variant);">Flujo por tipo de pieza:</span>
+            <button type="button" class="btn is-active" onclick="selectFlowType('actualidad', this)">Actualidad</button>
+            <button type="button" class="btn" onclick="selectFlowType('eventos', this)">Reportajes de eventos</button>
+            <button type="button" class="btn" onclick="selectFlowType('fondo', this)">Piezas de fondo</button>
+          </div>
+
+          <div class="milestones-grid" role="group" aria-label="Los siete hitos fijos del ciclo semanal">
+            <button type="button" class="milestone-step is-active" onclick="selectMilestone(0, this)" aria-pressed="true">
+              <span class="milestone-num">01</span>
+              <span class="milestone-name">Planificación</span>
+              <span class="milestone-timing" id="ms-time-0">Temas y reparto de la edición</span>
+            </button>
+            <button type="button" class="milestone-step" onclick="selectMilestone(1, this)" aria-pressed="false">
+              <span class="milestone-num">02</span>
+              <span class="milestone-name">Encargos</span>
+              <span class="milestone-timing" id="ms-time-1">Responsable y plazo</span>
+            </button>
+            <button type="button" class="milestone-step" onclick="selectMilestone(2, this)" aria-pressed="false">
+              <span class="milestone-num">03</span>
+              <span class="milestone-name">Entrega de textos</span>
+              <span class="milestone-timing" id="ms-time-2">Material completo y fuentes</span>
+            </button>
+            <button type="button" class="milestone-step" onclick="selectMilestone(3, this)" aria-pressed="false">
+              <span class="milestone-num">04</span>
+              <span class="milestone-name">Revisión</span>
+              <span class="milestone-timing" id="ms-time-3">Verificación y titulación</span>
+            </button>
+            <button type="button" class="milestone-step" onclick="selectMilestone(4, this)" aria-pressed="false">
+              <span class="milestone-num">05</span>
+              <span class="milestone-name">Maquetación</span>
+              <span class="milestone-timing" id="ms-time-4">Plantillas del sistema</span>
+            </button>
+            <button type="button" class="milestone-step" onclick="selectMilestone(5, this)" aria-pressed="false">
+              <span class="milestone-num">06</span>
+              <span class="milestone-name">Cierre</span>
+              <span class="milestone-timing" id="ms-time-5">Aprobación final</span>
+            </button>
+            <button type="button" class="milestone-step" onclick="selectMilestone(6, this)" aria-pressed="false">
+              <span class="milestone-num">07</span>
+              <span class="milestone-name">Publicación</span>
+              <span class="milestone-timing" id="ms-time-6">4 salidas simultáneas</span>
+            </button>
+          </div>
+
+          <div class="dossier-panel" id="milestone-detail" aria-live="polite" style="margin-top: var(--space-sm);">
+            <span class="section-label" id="ms-detail-kicker">Hito 01 · Flujo de Actualidad</span>
+            <h3 id="ms-detail-title">Planificación: temas y reparto de la edición</h3>
+            <p id="ms-detail-desc" style="margin-top: var(--space-xs);">
+              Definición de los temas informativos de la semana en consejo de redacción, asignación de jerarquía en portada y reserva de espacios publicitarios antes de iniciar la redacción.
+            </p>
+            <p id="ms-detail-cadence" style="font-size: 0.95rem; color: var(--on-surface-variant); margin-top: var(--space-xs);">
+              <strong>Cadencia en Actualidad:</strong> Ventana ágil de cierre semanal para absorber noticias de última hora sin desordenar el resto de la edición.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN III: DISEÑO GRÁFICO DE FORMATOS -->
+      <section id="pilar-diseno" class="section-open" aria-labelledby="diseno-titulo">
+        <span class="section-label">Frente III · Diseño gráfico de formatos</span>
+        <h2 id="diseno-titulo">Un sistema reutilizable, no piezas sueltas</h2>
+
+        <div class="editorial-split">
+          <div>
+            <p>
+              Maquetar cada número desde cero consume horas críticas y debilita la identidad visual. El nuevo sistema editorial parte de una auditoría de las últimas ediciones para construir componentes modulares listos para el equipo.
+            </p>
+            <ul class="editorial-list">
+              <li><strong>Auditoría visual</strong> de las últimas ediciones.</li>
+              <li><strong>Sistema de diseño editorial:</strong> tipografía, paleta, retículas y componentes.</li>
+              <li><strong>Plantillas por formato:</strong> noticia breve, crónica, entrevista, reportaje de evento y opinión.</li>
+              <li><strong>Criterios de fotografía, ilustración e infografía</strong>.</li>
+              <li><strong>Adaptación responsiva</strong> y espacios publicitarios integrados en la maqueta.</li>
+              <li><strong>Manual de uso</strong> y archivos fuente listos para el equipo.</li>
+            </ul>
+
+            <div style="border-top: var(--rule-ink); margin-top: var(--space-lg); padding-top: var(--space-md);">
+              <span class="tag">Cuatro principios estructurales</span>
+              <p style="margin-top: var(--space-xs); font-size: 0.98rem;">
+                <strong>Retícula de tres columnas:</strong> misma base en todos los formatos.<br>
+                <strong>Jerarquía clara:</strong> titular, entradilla, cuerpo y cita.<br>
+                <strong>Publicidad integrada:</strong> hueco fijo y etiquetado.<br>
+                <strong>Plantillas por formato:</strong> noticia, crónica y reportaje.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <div class="btn-row" role="group" aria-label="Soporte de visualización de la anatomía">
+              <span class="label-voice" style="color: var(--on-surface-variant);">Soporte:</span>
+              <button type="button" class="btn is-active" onclick="setAnatomySupport('impreso', this)">Impreso / PDF</button>
+              <button type="button" class="btn" onclick="setAnatomySupport('web', this)">Web</button>
+              <button type="button" class="btn" onclick="setAnatomySupport('movil', this)">Móvil</button>
+              <button type="button" class="btn" onclick="setAnatomySupport('boletin', this)">Boletín</button>
+            </div>
+
+            <div class="btn-row" role="group" aria-label="Plantilla por formato editorial">
+              <span class="label-voice" style="color: var(--on-surface-variant);">Plantilla:</span>
+              <button type="button" class="btn is-active" onclick="setAnatomyFormat('reportaje', this)">Reportaje de evento</button>
+              <button type="button" class="btn" onclick="setAnatomyFormat('breve', this)">Noticia breve</button>
+              <button type="button" class="btn" onclick="setAnatomyFormat('cronica', this)">Crónica</button>
+              <button type="button" class="btn" onclick="setAnatomyFormat('entrevista', this)">Entrevista</button>
+              <button type="button" class="btn" onclick="setAnatomyFormat('opinion', this)">Opinión</button>
+            </div>
+
+            <p style="font-size: 0.92rem; color: var(--on-surface-variant); margin-bottom: var(--space-sm);">
+              Anatomía interactiva de la página: pulsa en cualquier componente de la maqueta para ver su especificación.
+            </p>
+
+            <!-- Maqueta interactiva fiel a la diapositiva 8 -->
+            <div class="anatomy-canvas" id="anatomy-canvas">
+              <button type="button" class="anatomy-block is-selected" onclick="selectAnatomyPart('cabecera', this)">
+                <span class="kpi-label">Cabecera</span>
+                <strong id="mock-cabecera">SECCIÓN REPORTAJE DE EVENTO · EDICIÓN SEMANAL · 19 NOV 2026</strong>
+              </button>
+
+              <button type="button" class="anatomy-block" onclick="selectAnatomyPart('titular', this)">
+                <span class="kpi-label">Titular y entradilla</span>
+                <strong id="mock-titular" style="font-family: var(--font-headline); font-size: 1.25rem; display: block;">Titular principal jerarquizado con entradilla de contexto</strong>
+                <span id="mock-entradilla" style="font-size: 0.9rem; color: var(--on-surface-variant); display: block; margin-top: var(--space-xs);">Entradilla sintética que resume el ángulo de la pieza antes del desarrollo en columnas.</span>
+              </button>
+
+              <div class="anatomy-media-row">
+                <button type="button" class="anatomy-block" onclick="selectAnatomyPart('imagen', this)">
+                  <span class="kpi-label">Imagen con pie de foto</span>
+                  <span style="display: block; font-size: 0.9rem; color: var(--on-surface-variant); margin-top: var(--space-xs);">Encuadre principal bajo criterios de fotografía e ilustración + pie de foto acreditado.</span>
+                </button>
+                <button type="button" class="anatomy-block" onclick="selectAnatomyPart('cita', this)">
+                  <span class="kpi-label">Cita destacada</span>
+                  <span style="display: block; font-family: var(--font-headline); font-style: italic; font-size: 0.98rem; margin-top: var(--space-xs);">«Frase clave extraída del cuerpo para facilitar la lectura rápida.»</span>
+                </button>
+              </div>
+
+              <div class="anatomy-cols-row">
+                <button type="button" class="anatomy-block" onclick="selectAnatomyPart('texto', this)">
+                  <span class="kpi-label">Columna 1 · Texto</span>
+                  <span style="display: block; font-size: 0.88rem; color: var(--on-surface-variant);">Cuerpo principal en retícula estable.</span>
+                </button>
+                <button type="button" class="anatomy-block" onclick="selectAnatomyPart('texto', this)">
+                  <span class="kpi-label">Columna 2 · Texto</span>
+                  <span style="display: block; font-size: 0.88rem; color: var(--on-surface-variant);">Continuación y despiece informativo.</span>
+                </button>
+                <button type="button" class="anatomy-block anatomy-ad-slot" onclick="selectAnatomyPart('anuncio', this)">
+                  <span class="tag-ink">Hueco fijo</span>
+                  <strong style="display: block; font-size: 0.95rem; margin-top: var(--space-xs);">Anuncio etiquetado</strong>
+                  <span style="display: block; font-size: 0.85rem; color: var(--on-surface-variant);">Separación visual clara del contenido editorial.</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="dossier-panel" id="anatomy-inspector" style="margin-top: var(--space-sm);" aria-live="polite">
+              <span class="section-label" id="anatomy-part-label">Componente: Cabecera de sección</span>
+              <p id="anatomy-part-desc" style="font-size: 0.96rem;">
+                Ubica al lector de inmediato con nombre de sección, fecha y formato. Su estructura fija se mantiene idéntica en impreso, web, móvil y boletín.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN IV: PUBLICIDAD Y MODELO COMERCIAL -->
+      <section id="pilar-publicidad" class="section-open" aria-labelledby="pub-titulo">
+        <span class="section-label">Frente IV · Publicidad y modelo comercial</span>
+        <h2 id="pub-titulo">Vender con datos sin dañar la experiencia de lectura</h2>
+
+        <div class="editorial-split-even">
+          <div>
+            <p>
+              Profesionalizar la comercialización significa dejar atrás la venta por inercia y construir una oferta transparente que proteja la credibilidad periodística de Weazel News y entregue métricas verificables a cada anunciante.
+            </p>
+            <ul class="editorial-list">
+              <li><strong>Análisis de audiencia</strong> para vender con datos.</li>
+              <li>Revisión del <strong>inventario, precios y clientes</strong> actuales.</li>
+              <li><strong>Formatos clásicos</strong>, patrocinio de secciones y reportajes, <strong>contenido de marca señalizado</strong> y boletín.</li>
+              <li><strong>Tarifario, paquetes</strong> y política de renovación.</li>
+              <li>Normas de <strong>etiquetado</strong> y límites entre publicidad y periodismo.</li>
+              <li><strong>Dosier de medios</strong>, calendario de temas especiales e informes al anunciante.</li>
+            </ul>
+          </div>
+
+          <div>
+            <span class="section-label">Ciclo comercial repetible</span>
+            <h3>Del dato de audiencia a la renovación</h3>
+            <p style="font-size: 0.96rem; color: var(--on-surface-variant); margin-top: var(--space-xs);">
+              Un ciclo de seis pasos que se repite en cada edición y cuida la relación con el anunciante. Pulsa cada etapa para ver su contenido:
+            </p>
+
+            <div class="commercial-steps" role="group" aria-label="Etapas del ciclo comercial">
+              <button type="button" class="commercial-btn is-active" onclick="selectCommercialStep(0, this)" aria-pressed="true">
+                <span class="tag">01</span>
+                <strong style="display: block; font-family: var(--font-headline); margin-top: var(--space-xs);">Audiencia</strong>
+                <span style="font-size: 0.88rem; color: var(--on-surface-variant);">Perfil y hábitos de lectura</span>
+              </button>
+              <button type="button" class="commercial-btn" onclick="selectCommercialStep(1, this)" aria-pressed="false">
+                <span class="tag">02</span>
+                <strong style="display: block; font-family: var(--font-headline); margin-top: var(--space-xs);">Oferta</strong>
+                <span style="font-size: 0.88rem; color: var(--on-surface-variant);">Formatos y paquetes</span>
+              </button>
+              <button type="button" class="commercial-btn" onclick="selectCommercialStep(2, this)" aria-pressed="false">
+                <span class="tag">03</span>
+                <strong style="display: block; font-family: var(--font-headline); margin-top: var(--space-xs);">Venta</strong>
+                <span style="font-size: 0.88rem; color: var(--on-surface-variant);">Prospección y seguimiento</span>
+              </button>
+              <button type="button" class="commercial-btn" onclick="selectCommercialStep(3, this)" aria-pressed="false">
+                <span class="tag">04</span>
+                <strong style="display: block; font-family: var(--font-headline); margin-top: var(--space-xs);">Publicación</strong>
+                <span style="font-size: 0.88rem; color: var(--on-surface-variant);">Con etiquetado claro</span>
+              </button>
+              <button type="button" class="commercial-btn" onclick="selectCommercialStep(4, this)" aria-pressed="false">
+                <span class="tag">05</span>
+                <strong style="display: block; font-family: var(--font-headline); margin-top: var(--space-xs);">Informe</strong>
+                <span style="font-size: 0.88rem; color: var(--on-surface-variant);">Resultados al anunciante</span>
+              </button>
+              <button type="button" class="commercial-btn" onclick="selectCommercialStep(5, this)" aria-pressed="false">
+                <span class="tag">06</span>
+                <strong style="display: block; font-family: var(--font-headline); margin-top: var(--space-xs);">Renovación</strong>
+                <span style="font-size: 0.88rem; color: var(--on-surface-variant);">Política y condiciones</span>
+              </button>
+            </div>
+
+            <div class="dossier-panel" id="commercial-detail" style="margin-top: var(--space-sm);" aria-live="polite">
+              <span class="section-label" id="comm-kicker">Etapa 01 · Audiencia</span>
+              <h3 id="comm-title">Perfil y hábitos de lectura</h3>
+              <p id="comm-desc" style="margin-top: var(--space-xs); font-size: 0.96rem;">
+                El panel técnico aporta datos reales de lectura por soporte (impreso/PDF, web, móvil y boletín) para argumentar el valor comercial con cifras contrastadas en el dosier de medios.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN V: CRONOGRAMA, ENTREGABLES E INDICADORES -->
+      <section id="cronograma" class="section-open" aria-labelledby="cronograma-titulo">
+        <span class="section-label">Plan de ejecución · 15 a 21 semanas</span>
+        <h2 id="cronograma-titulo">Cuatro fases probadas en 3 o 4 ediciones reales</h2>
+        <p class="lede">
+          Los cambios no detienen la redacción: se validan progresivamente en 3 o 4 ediciones reales, sin interrumpir el ritmo semanal de publicación.
+        </p>
+
+        <div class="editorial-split">
+          <div>
+            <!-- Tabla estructurada fiel a la diapositiva 11 -->
+            <table class="broadsheet-table" aria-label="Fases del proyecto, duración y entregable principal">
+              <thead>
+                <tr>
+                  <th scope="col">Fase</th>
+                  <th scope="col">Duración</th>
+                  <th scope="col">Entregable principal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="is-highlighted" id="phase-row-0" onclick="highlightPhase(0)" style="cursor: pointer;">
+                  <td><strong>1. Diagnóstico</strong></td>
+                  <td class="num-col">3 a 4 semanas</td>
+                  <td><strong>Informe</strong> con hallazgos y prioridades</td>
+                </tr>
+                <tr id="phase-row-1" onclick="highlightPhase(1)" style="cursor: pointer;">
+                  <td><strong>2. Diseño de la solución</strong></td>
+                  <td class="num-col">4 a 6 semanas</td>
+                  <td><strong>Propuesta de solución</strong> y hoja de ruta</td>
+                </tr>
+                <tr id="phase-row-2" onclick="highlightPhase(2)" style="cursor: pointer;">
+                  <td><strong>3. Implementación piloto</strong></td>
+                  <td class="num-col">6 a 8 semanas</td>
+                  <td><strong>Plantillas, flujos, tarifario</strong> y paneles</td>
+                </tr>
+                <tr id="phase-row-3" onclick="highlightPhase(3)" style="cursor: pointer;">
+                  <td><strong>4. Consolidación</strong></td>
+                  <td class="num-col">2 a 3 semanas</td>
+                  <td><strong>Manuales, informe final</strong> y plan a 12 meses</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="dossier-panel" id="phase-inspector" style="margin-top: var(--space-md);" aria-live="polite">
+              <span class="section-label" id="phase-ins-kicker">Fase 1 · 3 a 4 semanas</span>
+              <p id="phase-ins-desc" style="font-size: 0.96rem;">
+                Auditoría integral de la cadena técnica, roles actuales, últimas ediciones impresas/digitales e inventario publicitario vigente. Culmina con el informe de hallazgos y prioridades.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3 style="margin-bottom: var(--space-xs);">Duración mínima y máxima por fase (semanas)</h3>
+            <p style="font-size: 0.94rem; color: var(--on-surface-variant);">
+              Pulsa una barra o fila de la tabla para resaltar cada fase. Total acumulado estimado: 15 a 21 semanas.
+            </p>
+
+            <div class="chart-wrapper">
+              <!-- Gráfico de barras editorial plano (Broadsheet data visualization) -->
+              <svg class="phase-svg" viewBox="0 0 600 280" role="img" aria-label="Gráfico de barras de duración mínima y máxima en semanas por fase" xmlns="http://www.w3.org/2000/svg">
+                <!-- Rejilla horizontal y eje -->
+                <line x1="165" y1="24" x2="555" y2="24" stroke="var(--outline-variant)" stroke-width="1" />
+                <line x1="165" y1="84" x2="555" y2="84" stroke="var(--outline-variant)" stroke-width="1" />
+                <line x1="165" y1="144" x2="555" y2="144" stroke="var(--outline-variant)" stroke-width="1" />
+                <line x1="165" y1="204" x2="555" y2="204" stroke="var(--outline-variant)" stroke-width="1" />
+                <!-- Línea base cero en tinta -->
+                <line x1="165" y1="16" x2="165" y2="232" stroke="var(--on-surface)" stroke-width="1.5" />
+                <line x1="165" y1="232" x2="555" y2="232" stroke="var(--on-surface)" stroke-width="1" />
+
+                <!-- Marcas de semanas (0 a 8) — escala: 165 + (semana * 45) -->
+                <text x="165" y="250" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="11" fill="var(--on-surface-variant)">0</text>
+                <text x="210" y="250" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="11" fill="var(--on-surface-variant)">1</text>
+                <text x="255" y="250" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="11" fill="var(--on-surface-variant)">2</text>
+                <text x="300" y="250" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="11" fill="var(--on-surface-variant)">3</text>
+                <text x="345" y="250" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="11" fill="var(--on-surface-variant)">4</text>
+                <text x="390" y="250" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="11" fill="var(--on-surface-variant)">5</text>
+                <text x="435" y="250" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="11" fill="var(--on-surface-variant)">6</text>
+                <text x="480" y="250" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="11" fill="var(--on-surface-variant)">7</text>
+                <text x="525" y="250" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="11" fill="var(--on-surface-variant)">8 sem.</text>
+
+                <!-- Leyenda directa superior -->
+                <rect x="165" y="2" width="12" height="10" fill="var(--data-1)" />
+                <text x="182" y="11" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="11" fill="var(--on-surface)">Duración mínima</text>
+                <rect x="315" y="2" width="12" height="10" fill="var(--data-2)" />
+                <text x="332" y="11" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="11" fill="var(--on-surface)">Duración máxima</text>
+
+                <!-- Fase 1: 3 a 4 semanas -->
+                <g onclick="highlightPhase(0)" style="cursor: pointer;">
+                  <text x="155" y="50" text-anchor="end" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="12" fill="var(--on-surface)">1. Diagnóstico</text>
+                  <rect x="165" y="32" width="135" height="15" fill="var(--data-1)" />
+                  <rect x="165" y="50" width="180" height="15" fill="var(--data-2)" />
+                  <text x="353" y="55" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="12" fill="var(--primary)">3–4 sem.</text>
+                </g>
+
+                <!-- Fase 2: 4 a 6 semanas -->
+                <g onclick="highlightPhase(1)" style="cursor: pointer;">
+                  <text x="155" y="110" text-anchor="end" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="12" fill="var(--on-surface)">2. Diseño</text>
+                  <rect x="165" y="92" width="180" height="15" fill="var(--data-1)" />
+                  <rect x="165" y="110" width="270" height="15" fill="var(--data-2)" />
+                  <text x="443" y="115" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="12" fill="var(--primary)">4–6 sem.</text>
+                </g>
+
+                <!-- Fase 3: 6 a 8 semanas -->
+                <g onclick="highlightPhase(2)" style="cursor: pointer;">
+                  <text x="155" y="170" text-anchor="end" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="12" fill="var(--on-surface)">3. Implementación</text>
+                  <rect x="165" y="152" width="270" height="15" fill="var(--data-1)" />
+                  <rect x="165" y="170" width="360" height="15" fill="var(--data-2)" />
+                  <text x="533" y="175" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="12" fill="var(--primary)">6–8 sem.</text>
+                </g>
+
+                <!-- Fase 4: 2 a 3 semanas -->
+                <g onclick="highlightPhase(3)" style="cursor: pointer;">
+                  <text x="155" y="218" text-anchor="end" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="12" fill="var(--on-surface)">4. Consolidación</text>
+                  <rect x="165" y="198" width="90" height="14" fill="var(--data-1)" />
+                  <rect x="165" y="214" width="135" height="14" fill="var(--data-2)" />
+                  <text x="308" y="218" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="12" fill="var(--primary)">2–3 sem.</text>
+                </g>
+              </svg>
+              <p style="font-size: 0.85rem; color: var(--on-surface-variant); margin-top: var(--space-xs);">
+                Fuente: Propuesta de consultoría para Weazel News (Fred, 19 de noviembre de 2026).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Qué recibirá y cómo lo mediré -->
+        <div class="editorial-split-even" style="margin-top: var(--space-xl); border-top: var(--rule-ink); padding-top: var(--space-lg);">
+          <div>
+            <span class="section-label">Qué recibirá el medio</span>
+            <h3>Seis entregables concretos</h3>
+            <div class="deliverables-grid">
+              <div class="deliverable-item">
+                <span class="tag">01</span>
+                <p style="margin-top: var(--space-xs);"><strong>Diagnóstico integral</strong> y hoja de ruta.</p>
+              </div>
+              <div class="deliverable-item">
+                <span class="tag">02</span>
+                <p style="margin-top: var(--space-xs);"><strong>Arquitectura técnica</strong> y guía de configuración.</p>
+              </div>
+              <div class="deliverable-item">
+                <span class="tag">03</span>
+                <p style="margin-top: var(--space-xs);"><strong>Calendario editorial</strong> y guía de estilo.</p>
+              </div>
+              <div class="deliverable-item">
+                <span class="tag">04</span>
+                <p style="margin-top: var(--space-xs);"><strong>Sistema de diseño</strong> con plantillas.</p>
+              </div>
+              <div class="deliverable-item">
+                <span class="tag">05</span>
+                <p style="margin-top: var(--space-xs);"><strong>Dosier de medios</strong> y paquetes publicitarios.</p>
+              </div>
+              <div class="deliverable-item">
+                <span class="tag">06</span>
+                <p style="margin-top: var(--space-xs);"><strong>Panel de indicadores</strong> y formación.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="editorial-col-ruled">
+            <span class="section-label">Cómo lo mediré</span>
+            <h3>Cuatro indicadores de éxito</h3>
+            <div class="deliverables-grid" style="grid-template-columns: minmax(0, 1fr);">
+              <div class="deliverable-item">
+                <span class="tag-ink">Producción</span>
+                <p style="margin-top: var(--space-xs);">Menos tiempo de cierre y menos correcciones tardías.</p>
+              </div>
+              <div class="deliverable-item">
+                <span class="tag-ink">Audiencia</span>
+                <p style="margin-top: var(--space-xs);">Más lectores recurrentes y mayor apertura del boletín.</p>
+              </div>
+              <div class="deliverable-item">
+                <span class="tag-ink">Diseño</span>
+                <p style="margin-top: var(--space-xs);">Más piezas hechas con plantillas del sistema.</p>
+              </div>
+              <div class="deliverable-item" style="border-bottom: 0;">
+                <span class="tag-ink">Publicidad</span>
+                <p style="margin-top: var(--space-xs);">Más ingresos por edición y retención de anunciantes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN VI: INVERSIÓN, CONDICIONES Y PRÓXIMOS PASOS -->
+      <section id="inversion" class="section-open" aria-labelledby="inversion-titulo">
+        <span class="section-label">Inversión y cierre</span>
+        <h2 id="inversion-titulo">Modalidades económicas, condiciones y próximos pasos</h2>
+        <p style="color: var(--on-surface-variant);">
+          Selecciona una modalidad económica (importes por completar tras el ajuste de alcance) y evalúa el acompañamiento opcional posterior a la consolidación.
+        </p>
+
+        <div class="modality-cards" role="group" aria-label="Modalidades económicas">
+          <button type="button" class="modality-card is-active" onclick="selectModality('A', this)" aria-pressed="true">
+            <span class="tag-ink">Modalidad A</span>
+            <h3 style="margin-top: var(--space-xs);">Proyecto cerrado</h3>
+            <div class="kpi-value" style="font-size: 1.55rem; margin-block: var(--space-sm);">[XX.XXX €] + IVA</div>
+            <p style="font-size: 0.94rem; color: var(--on-surface-variant);">Precio fijo por las cuatro fases completas (15 a 21 semanas).</p>
+          </button>
+          <button type="button" class="modality-card" onclick="selectModality('B', this)" aria-pressed="false">
+            <span class="tag-ink">Modalidad B</span>
+            <h3 style="margin-top: var(--space-xs);">Por fases</h3>
+            <div class="kpi-value" style="font-size: 1.55rem; margin-block: var(--space-sm);">[X.XXX € por fase] + IVA</div>
+            <p style="font-size: 0.94rem; color: var(--on-surface-variant);">Facturación escalonada al cierre y validación de cada fase.</p>
+          </button>
+          <button type="button" class="modality-card" onclick="selectModality('C', this)" aria-pressed="false">
+            <span class="tag-ink">Modalidad C</span>
+            <h3 style="margin-top: var(--space-xs);">Bolsa de horas</h3>
+            <div class="kpi-value" style="font-size: 1.55rem; margin-block: var(--space-sm);">[XX €/hora] + IVA</div>
+            <p style="font-size: 0.94rem; color: var(--on-surface-variant);">Horas mensuales flexibles con informe detallado de uso.</p>
+          </button>
+        </div>
+
+        <div class="dossier-panel" id="modality-summary" style="margin-top: var(--space-md);" aria-live="polite">
+          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-md);">
+            <div>
+              <span class="section-label" id="mod-kicker">Selección actual · Modalidad A</span>
+              <h3 id="mod-title">Proyecto cerrado — [XX.XXX €] + IVA</h3>
+              <p id="mod-desc" style="margin-top: var(--space-xs); font-size: 0.96rem;">
+                Cubre íntegramente las cuatro fases (Diagnóstico, Diseño de la solución, Implementación piloto y Consolidación). Licencias de software y desplazamientos se acuerdan aparte.
+              </p>
+            </div>
+            <button type="button" class="btn" id="btn-acompanamiento" onclick="toggleOptionalSupport(this)" aria-pressed="false">
+              Añadir opcional: acompañamiento 3–6 meses
+            </button>
+          </div>
+          <p id="mod-optional-note" style="margin-top: var(--space-sm); font-size: 0.94rem; color: var(--on-surface-variant);">
+            <strong>Opcional disponible:</strong> acompañamiento de 3 a 6 meses por [X.XXX €/mes] + IVA. Licencias y desplazamientos se acuerdan aparte.
+          </p>
+        </div>
+
+        <!-- Condiciones y Próximos pasos -->
+        <div class="editorial-split-even" style="margin-top: var(--space-xl);">
+          <div>
+            <span class="section-label">Marco de trabajo</span>
+            <h3>Condiciones</h3>
+            <ul class="editorial-list" style="margin-top: var(--space-md);">
+              <li><strong>Confidencialidad</strong> de toda la información compartida por el medio.</li>
+              <li><strong>Independencia editorial:</strong> el consultor no interviene en los contenidos periodísticos.</li>
+              <li>Los <strong>entregables a medida</strong> pasan a ser propiedad de Weazel News tras el pago.</li>
+              <li><strong>Datos personales</strong> tratados bajo acuerdo específico conforme al RGPD.</li>
+            </ul>
+          </div>
+
+          <div class="editorial-col-ruled">
+            <span class="section-label">Agenda de arranque</span>
+            <h3>Próximos pasos</h3>
+            <p style="font-size: 0.94rem; color: var(--on-surface-variant); margin-top: var(--space-xs);">
+              Marca los pasos completados durante la revisión de la propuesta (<span id="steps-counter">0 de 5</span> completados):
+            </p>
+            <ul class="steps-list" aria-label="Lista de próximos pasos">
+              <li class="step-row">
+                <button type="button" class="step-toggle" onclick="toggleNextStep(this)">
+                  <span class="step-box" aria-hidden="true">1</span>
+                  <span class="step-text"><strong>Reunión</strong> de presentación y resolución de dudas.</span>
+                </button>
+              </li>
+              <li class="step-row">
+                <button type="button" class="step-toggle" onclick="toggleNextStep(this)">
+                  <span class="step-box" aria-hidden="true">2</span>
+                  <span class="step-text">Ajuste de <strong>alcance y modalidad económica</strong>.</span>
+                </button>
+              </li>
+              <li class="step-row">
+                <button type="button" class="step-toggle" onclick="toggleNextStep(this)">
+                  <span class="step-box" aria-hidden="true">3</span>
+                  <span class="step-text"><strong>Firma</strong> del acuerdo de servicios.</span>
+                </button>
+              </li>
+              <li class="step-row">
+                <button type="button" class="step-toggle" onclick="toggleNextStep(this)">
+                  <span class="step-box" aria-hidden="true">4</span>
+                  <span class="step-text"><strong>Acceso</strong> a ediciones recientes, datos y tarifas actuales.</span>
+                </button>
+              </li>
+              <li class="step-row">
+                <button type="button" class="step-toggle" onclick="toggleNextStep(this)">
+                  <span class="step-box" aria-hidden="true">5</span>
+                  <span class="step-text"><strong>Reunión de arranque</strong> con el equipo de la revista.</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="newspaper-footer" role="contentinfo">
+      <span><strong>WEAZEL NEWS</strong> · Propuesta de consultoría para la revista semanal</span>
+      <span>Autor: <strong>Fred</strong> · 19 de noviembre de 2026 · Validez: 30 días</span>
+    </footer>
+  </div>
+
+  <script>
+    const pillarData = {
+      tecnica: {
+        kicker: `Frente 01 · Consultoría Técnica`,
+        title: `De la redacción al lector en una sola cadena`,
+        summary: `Reviso la cadena completa de producción: gestor de contenidos (CMS), maquetación y archivos para automatizar tareas repetitivas, habilitar la publicación multicanal y medir las cuatro salidas en un único panel semanal.`,
+        deliverable: `Arquitectura técnica, automatizaciones multicanal, cumplimiento SEO/RGPD y guía de configuración.`,
+        metric: `Mayor apertura del boletín, rendimiento optimizado y lectura unificada por soporte.`,
+        anchor: `#pilar-tecnico`
+      },
+      organizativa: {
+        kicker: `Frente 02 · Consultoría Organizativa`,
+        title: `Siete hitos fijos y cero cuellos de botella`,
+        summary: `Diagnóstico de roles, dependencias y calendario editorial semanal con flujos diferenciados para actualidad, reportajes de eventos y piezas de fondo, además de guía de verificación y separación editorial/publicitaria.`,
+        deliverable: `Calendario editorial semanal, guía de estilo y verificación, y formación práctica del equipo.`,
+        metric: `Menos tiempo de cierre y reducción drástica de correcciones tardías.`,
+        anchor: `#pilar-organizativo`
+      },
+      diseno: {
+        kicker: `Frente 03 · Diseño de Formatos`,
+        title: `Sistema visual reutilizable en todos los soportes`,
+        summary: `Auditoría visual de las últimas ediciones y creación de una retícula modular con plantillas para noticia breve, crónica, entrevista, reportaje de evento y opinión, adaptadas a impreso, web, móvil y boletín.`,
+        deliverable: `Sistema de diseño editorial, plantillas reutilizables, manual de uso y archivos fuente.`,
+        metric: `Mayor proporción de piezas producidas con plantillas y coherencia visual multicanal.`,
+        anchor: `#pilar-diseno`
+      },
+      publicidad: {
+        kicker: `Frente 04 · Publicidad y Modelo Comercial`,
+        title: `Vender con datos sin dañar al lector`,
+        summary: `Análisis de audiencia, revisión de inventario y precios, creación de paquetes, patrocinio de secciones y contenido de marca señalizado, junto a normas estrictas de etiquetado e informes al anunciante.`,
+        deliverable: `Dosier de medios, tarifario, paquetes comerciales, calendario especial e informes tipo.`,
+        metric: `Más ingresos por edición y mayor tasa de renovación de anunciantes.`,
+        anchor: `#pilar-publicidad`
+      }
+    };
+
+    let currentChainNode = `redaccion`;
+    let currentOutput = `impreso`;
+
+    const chainDescriptions = {
+      redaccion: `La redacción carga textos e imágenes estructurados desde el origen (titular, entradilla, pie de foto y fuentes verificadas), evitando copiar y pegar entre archivos dispersos.`,
+      cms: `El gestor de contenidos (CMS) centraliza cada pieza con su estado editorial, permisos por rol y metadatos SEO, activando flujos automáticos hacia las salidas.`,
+      plantillas: `Las plantillas del sistema de diseño aplican automáticamente la retícula de tres columnas, jerarquía tipográfica y huecos fijos para publicidad etiquetada.`,
+      analitica: `El panel único semanal consolida métricas de lectura, suscripciones, apertura del boletín y rendimiento de cada espacio publicitario por soporte.`
+    };
+
+    const outputDescriptions = {
+      impreso: `Impreso y PDF: exportación controlada con márgenes de prensa, pies de foto acreditados y espacios publicitarios integrados en maqueta.`,
+      web: `Web: publicación directa con rendimiento optimizado, accesibilidad, SEO técnico y cumplimiento del RGPD.`,
+      movil: `Móvil: adaptación responsiva de la misma retícula para lectura cómoda en pantalla vertical sin pérdida de jerarquía.`,
+      boletin: `Boletín: envío automatizado a suscriptores con seguimiento de tasa de apertura y patrocinios señalizados.`
+    };
+
+    const chainLabels = {
+      redaccion: `Redacción`,
+      cms: `CMS`,
+      plantillas: `Plantillas`,
+      analitica: `Analítica común`
+    };
+
+    const outputLabels = {
+      impreso: `Impreso y PDF`,
+      web: `Web`,
+      movil: `Móvil`,
+      boletin: `Boletín`
+    };
+
+    function selectPillar(key, btnEl) {
+      const data = pillarData[key];
+      if (!data) return;
+
+      const btns = document.querySelectorAll('.pillar-btn');
+      btns.forEach(function (b) {
+        b.classList.remove('is-active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      if (btnEl) {
+        btnEl.classList.add('is-active');
+        btnEl.setAttribute('aria-selected', 'true');
+      }
+
+      const kicker = document.getElementById('pillar-kicker');
+      const title = document.getElementById('pillar-title');
+      const summary = document.getElementById('pillar-summary');
+      const deliv = document.getElementById('pillar-deliverable');
+      const metric = document.getElementById('pillar-metric');
+      const anchor = document.getElementById('pillar-anchor');
+
+      if (kicker) kicker.textContent = data.kicker;
+      if (title) title.textContent = data.title;
+      if (summary) summary.textContent = data.summary;
+      if (deliv) deliv.textContent = data.deliverable;
+      if (metric) metric.textContent = data.metric;
+      if (anchor) anchor.setAttribute('href', data.anchor);
+    }
+
+    function updateChainInspector() {
+      const lbl = document.getElementById('chain-inspector-label');
+      const txt = document.getElementById('chain-inspector-text');
+      if (lbl) {
+        lbl.textContent = `Eslabón activo: ${chainLabels[currentChainNode]} + Salida ${outputLabels[currentOutput]}`;
+      }
+      if (txt) {
+        txt.textContent = `${chainDescriptions[currentChainNode]} En paralelo, para ${outputDescriptions[currentOutput]}`;
+      }
+    }
+
+    function selectChainNode(nodeKey, btnEl) {
+      currentChainNode = nodeKey;
+      const nodes = document.querySelectorAll('.chain-node');
+      nodes.forEach(function (n) { n.classList.remove('is-active'); });
+      if (btnEl) btnEl.classList.add('is-active');
+      updateChainInspector();
+    }
+
+    function selectOutput(outKey, btnEl) {
+      currentOutput = outKey;
+      const cells = document.querySelectorAll('.output-cell');
+      cells.forEach(function (c) { c.classList.remove('is-active'); });
+      if (btnEl) btnEl.classList.add('is-active');
+      updateChainInspector();
+    }
+
+    let currentFlow = `actualidad`;
+    let currentMilestone = 0;
+
+    const flowMeta = {
+      actualidad: {
+        name: `Actualidad`,
+        cadence: `Ventana ágil de cierre semanal para absorber noticias de última hora sin desordenar el resto de la edición.`,
+        timings: [
+          `Inicio de semana`,
+          `Mismo día`,
+          `48 h antes del cierre`,
+          `24 h antes del cierre`,
+          `Día de cierre`,
+          `Aprobación final`,
+          `Edición semanal`
+        ]
+      },
+      eventos: {
+        name: `Reportajes de eventos`,
+        cadence: `Planificación ligada a la fecha del evento, con cobertura gráfica previa y cierre coordinado con el sistema de diseño.`,
+        timings: [
+          `1–2 semanas antes`,
+          `Previa al evento`,
+          `24 h tras el evento`,
+          `Edición y contraste`,
+          `Maqueta de reportaje`,
+          `Cierre visual`,
+          `Edición semanal`
+        ]
+      },
+      fondo: {
+        name: `Piezas de fondo`,
+        cadence: `Producción anticipada en ciclo largo para evitar que la investigación y la verificación compitan con la actualidad en el cierre.`,
+        timings: [
+          `2–4 semanas antes`,
+          `Hoja de ruta larga`,
+          `Semana previa`,
+          `Verificación profunda`,
+          `Maqueta adelantada`,
+          `Revisión final`,
+          `Edición semanal`
+        ]
+      }
+    };
+
+    const milestoneDetails = [
+      {
+        title: `Planificación: temas y reparto de la edición`,
+        desc: `Definición de los temas de la semana en consejo de redacción, asignación de jerarquía en portada y coordinación temprana con los espacios publicitarios.`
+      },
+      {
+        title: `Encargos: cada pieza con responsable y plazo`,
+        desc: `Registro formal de cada artículo con enfoque, extensión, necesidades gráficas, responsable asignado y fecha límite de entrega.`
+      },
+      {
+        title: `Entrega de textos: material completo y fuentes`,
+        desc: `Recepción del texto definitivo acompañado de sus fuentes verificables, fotografías o gráficos y sugerencias de titulación.`
+      },
+      {
+        title: `Revisión: verificación, correcciones y titulación`,
+        desc: `Aplicación de la guía de estilo y verificación: comprobación de datos, corrección ortotipográfica y ajuste de titulares y entradillas.`
+      },
+      {
+        title: `Maquetación: con las plantillas del sistema de diseño`,
+        desc: `Volcado directo en las plantillas modulares (noticia breve, crónica, entrevista, reportaje u opinión) garantizando la separación frente a la publicidad.`
+      },
+      {
+        title: `Cierre: aprobación final de la edición`,
+        desc: `Lectura de control sobre prueba cerrada para validar jerarquía, pies de foto, etiquetado comercial y ausencia de erratas.`
+      },
+      {
+        title: `Publicación: impreso, web, móvil y boletín`,
+        desc: `Despliegue multicanal coordinado desde el CMS hacia las cuatro salidas y activación de la medición en el panel semanal.`
+      }
+    ];
+
+    function renderMilestonePanel() {
+      const flow = flowMeta[currentFlow];
+      const ms = milestoneDetails[currentMilestone];
+      if (!flow || !ms) return;
+
+      for (let i = 0; i < 7; i += 1) {
+        const tEl = document.getElementById(`ms-time-${i}`);
+        if (tEl) tEl.textContent = flow.timings[i];
+      }
+
+      const kicker = document.getElementById('ms-detail-kicker');
+      const title = document.getElementById('ms-detail-title');
+      const desc = document.getElementById('ms-detail-desc');
+      const cad = document.getElementById('ms-detail-cadence');
+
+      if (kicker) kicker.textContent = `Hito 0${currentMilestone + 1} · Flujo de ${flow.name}`;
+      if (title) title.textContent = ms.title;
+      if (desc) desc.textContent = ms.desc;
+      if (cad) cad.innerHTML = `<strong>Cadencia en ${flow.name}:</strong> ${flow.cadence} Plazo de este hito: ${flow.timings[currentMilestone]}.`;
+    }
+
+    function selectFlowType(flowKey, btnEl) {
+      currentFlow = flowKey;
+      const parent = btnEl ? btnEl.parentElement : null;
+      if (parent) {
+        const btns = parent.querySelectorAll('.btn');
+        btns.forEach(function (b) { b.classList.remove('is-active'); });
+      }
+      if (btnEl) btnEl.classList.add('is-active');
+      renderMilestonePanel();
+    }
+
+    function selectMilestone(index, btnEl) {
+      currentMilestone = index;
+      const steps = document.querySelectorAll('.milestone-step');
+      steps.forEach(function (s) {
+        s.classList.remove('is-active');
+        s.setAttribute('aria-selected', 'false');
+      });
+      if (btnEl) {
+        btnEl.classList.add('is-active');
+        btnEl.setAttribute('aria-selected', 'true');
+      }
+      renderMilestonePanel();
+    }
+
+    const anatomyPartData = {
+      cabecera: {
+        label: `Componente: Cabecera de sección y fecha`,
+        desc: `Ubica al lector de inmediato con nombre de sección, fecha y formato. Su estructura fija se mantiene idéntica en impreso, web, móvil y boletín.`
+      },
+      titular: {
+        label: `Componente: Titular y entradilla`,
+        desc: `Jerarquía clara en tipografía de alto contraste seguida de una entradilla de medida controlada para sintetizar la noticia antes de entrar en las columnas.`
+      },
+      imagen: {
+        label: `Componente: Imagen con pie de foto`,
+        desc: `Fotografía, ilustración o infografía bajo criterios unificados de encuadre y pie de foto obligatorio junto a la cita destacada.`
+      },
+      cita: {
+        label: `Componente: Cita destacada`,
+        desc: `Elemento tipográfico en cursiva entre filetes que rompe la densidad del texto y ofrece puntos de entrada rápidos en lectura diagonal.`
+      },
+      texto: {
+        label: `Componente: Retícula de texto (2 columnas editoriales)`,
+        desc: `Dos columnas de cuerpo editorial sobre una base común de tres columnas, adaptándose automáticamente a una sola columna en móvil y boletín.`
+      },
+      anuncio: {
+        label: `Componente: Hueco fijo y anuncio etiquetado`,
+        desc: `La tercera columna integra el espacio publicitario de forma ordenada en la maqueta, con etiquetado explícito que preserva la frontera entre periodismo y publicidad.`
+      }
+    };
+
+    const formatMockData = {
+      reportaje: {
+        cabecera: `SECCIÓN REPORTAJE DE EVENTO · EDICIÓN SEMANAL · 19 NOV 2026`,
+        titular: `Plantilla de reportaje de evento con doble entrada visual`,
+        entradilla: `Entradilla amplia para contextualizar la cobertura presencial y dirigir la lectura hacia las columnas.`
+      },
+      breve: {
+        cabecera: `SECCIÓN NOTICIA BREVE · EDICIÓN SEMANAL · 19 NOV 2026`,
+        titular: `Plantilla de noticia breve de cierre rápido`,
+        entradilla: `Síntesis directa de un párrafo pensada para actualidad de última hora sin alterar la retícula.`
+      },
+      cronica: {
+        cabecera: `SECCIÓN CRÓNICA · EDICIÓN SEMANAL · 19 NOV 2026`,
+        titular: `Plantilla de crónica narrativa en tres columnas`,
+        entradilla: `Voz del cronista en primer plano acompañada de pie de foto y cita destacada de ambiente.`
+      },
+      entrevista: {
+        cabecera: `SECCIÓN ENTREVISTA · EDICIÓN SEMANAL · 19 NOV 2026`,
+        titular: `Plantilla de entrevista con perfil y cita destacada`,
+        entradilla: `Presentación del entrevistado seguida de ritmo tipográfico claro entre pregunta y respuesta.`
+      },
+      opinion: {
+        cabecera: `SECCIÓN OPINIÓN · EDICIÓN SEMANAL · 19 NOV 2026`,
+        titular: `Plantilla de opinión claramente diferenciada de la información`,
+        entradilla: `Cabecera señalizada con firma de autor y separación estricta respecto a los contenidos patrocinados.`
+      }
+    };
+
+    function setAnatomySupport(supportKey, btnEl) {
+      const parent = btnEl ? btnEl.parentElement : null;
+      if (parent) {
+        parent.querySelectorAll('.btn').forEach(function (b) { b.classList.remove('is-active'); });
+      }
+      if (btnEl) btnEl.classList.add('is-active');
+
+      const canvas = document.getElementById('anatomy-canvas');
+      if (!canvas) return;
+      canvas.classList.remove('mode-impreso', 'mode-web', 'mode-movil', 'mode-boletin');
+      canvas.classList.add(`mode-${supportKey}`);
+    }
+
+    function setAnatomyFormat(formatKey, btnEl) {
+      const parent = btnEl ? btnEl.parentElement : null;
+      if (parent) {
+        parent.querySelectorAll('.btn').forEach(function (b) { b.classList.remove('is-active'); });
+      }
+      if (btnEl) btnEl.classList.add('is-active');
+
+      const fmt = formatMockData[formatKey];
+      if (!fmt) return;
+      const cab = document.getElementById('mock-cabecera');
+      const tit = document.getElementById('mock-titular');
+      const ent = document.getElementById('mock-entradilla');
+      if (cab) cab.textContent = fmt.cabecera;
+      if (tit) tit.textContent = fmt.titular;
+      if (ent) ent.textContent = fmt.entradilla;
+    }
+
+    function selectAnatomyPart(partKey, btnEl) {
+      const data = anatomyPartData[partKey];
+      if (!data) return;
+      document.querySelectorAll('.anatomy-block').forEach(function (b) {
+        b.classList.remove('is-selected');
+      });
+      if (btnEl) btnEl.classList.add('is-selected');
+
+      const lbl = document.getElementById('anatomy-part-label');
+      const desc = document.getElementById('anatomy-part-desc');
+      if (lbl) lbl.textContent = data.label;
+      if (desc) desc.textContent = data.desc;
+    }
+
+    const commercialData = [
+      {
+        kicker: `Etapa 01 · Audiencia`,
+        title: `Perfil y hábitos de lectura`,
+        desc: `El panel técnico aporta datos reales de lectura por soporte (impreso/PDF, web, móvil y boletín) para argumentar el valor comercial con cifras contrastadas en el dosier de medios.`
+      },
+      {
+        kicker: `Etapa 02 · Oferta`,
+        title: `Formatos y paquetes`,
+        desc: `Catálogo ordenado con formatos clásicos, patrocinio de secciones y reportajes, contenido de marca señalizado y espacios en el boletín, respaldado por un tarifario transparente.`
+      },
+      {
+        kicker: `Etapa 03 · Venta`,
+        title: `Prospección y seguimiento`,
+        desc: `Calendario anual de temas especiales y proceso comercial estructurado sobre el dosier de medios para sustituir la venta por inercia.`
+      },
+      {
+        kicker: `Etapa 04 · Publicación`,
+        title: `Con etiquetado claro`,
+        desc: `Inserción en los huecos fijos previstos dentro de las plantillas, respetando las normas de etiquetado y los límites entre publicidad y periodismo.`
+      },
+      {
+        kicker: `Etapa 05 · Informe`,
+        title: `Resultados para el anunciante`,
+        desc: `Entrega de informes claros de rendimiento publicitario extraídos del panel semanal para demostrar retorno real tras cada campaña.`
+      },
+      {
+        kicker: `Etapa 06 · Renovación`,
+        title: `Política y condiciones`,
+        desc: `Cierre del ciclo con reglas predefinidas de renovación, paquetes de continuidad y seguimiento de retención de anunciantes.`
+      }
+    ];
+
+    function selectCommercialStep(idx, btnEl) {
+      const item = commercialData[idx];
+      if (!item) return;
+      document.querySelectorAll('.commercial-btn').forEach(function (b) {
+        b.classList.remove('is-active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      if (btnEl) {
+        btnEl.classList.add('is-active');
+        btnEl.setAttribute('aria-selected', 'true');
+      }
+
+      const kicker = document.getElementById('comm-kicker');
+      const title = document.getElementById('comm-title');
+      const desc = document.getElementById('comm-desc');
+      if (kicker) kicker.textContent = item.kicker;
+      if (title) title.textContent = item.title;
+      if (desc) desc.textContent = item.desc;
+    }
+
+    const phaseDescriptions = [
+      {
+        kicker: `Fase 1 · 3 a 4 semanas`,
+        desc: `Auditoría integral de la cadena técnica, roles actuales, últimas ediciones impresas/digitales e inventario publicitario vigente. Culmina con el informe de hallazgos y prioridades.`
+      },
+      {
+        kicker: `Fase 2 · 4 a 6 semanas`,
+        desc: `Definición de la arquitectura objetivo, calendario semanal de siete hitos, sistema de diseño editorial y estructura del tarifario. Culmina con la propuesta de solución y hoja de ruta.`
+      },
+      {
+        kicker: `Fase 3 · 6 a 8 semanas`,
+        desc: `Puesta en marcha y prueba en 3 o 4 ediciones reales sin interrumpir el ritmo semanal. Incluye plantillas, flujos, tarifario comercial y paneles de medición.`
+      },
+      {
+        kicker: `Fase 4 · 2 a 3 semanas`,
+        desc: `Ajustes finales tras el piloto, formación práctica del equipo y entrega de manuales de uso, informe final y plan a 12 meses para operar con autonomía.`
+      }
+    ];
+
+    function highlightPhase(idx) {
+      const p = phaseDescriptions[idx];
+      if (!p) return;
+      for (let i = 0; i < 4; i += 1) {
+        const row = document.getElementById(`phase-row-${i}`);
+        if (row) {
+          if (i === idx) row.classList.add('is-highlighted');
+          else row.classList.remove('is-highlighted');
+        }
+      }
+      const kicker = document.getElementById('phase-ins-kicker');
+      const desc = document.getElementById('phase-ins-desc');
+      if (kicker) kicker.textContent = p.kicker;
+      if (desc) desc.textContent = p.desc;
+    }
+
+    const modalityDetails = {
+      A: {
+        kicker: `Selección actual · Modalidad A`,
+        title: `Proyecto cerrado — [XX.XXX €] + IVA`,
+        desc: `Precio fijo por las cuatro fases completas (Diagnóstico, Diseño de la solución, Implementación piloto y Consolidación) durante 15 a 21 semanas.`
+      },
+      B: {
+        kicker: `Selección actual · Modalidad B`,
+        title: `Por fases — [X.XXX € por fase] + IVA`,
+        desc: `Facturación al cierre y entrega de cada una de las cuatro fases del proyecto, facilitando el control presupuestario por hitos.`
+      },
+      C: {
+        kicker: `Selección actual · Modalidad C`,
+        title: `Bolsa de horas — [XX €/hora] + IVA`,
+        desc: `Asignación de horas mensuales con informe detallado de uso para adaptar el ritmo de dedicación a la disponibilidad del equipo.`
+      }
+    };
+
+    let optionalSupportAdded = false;
+
+    function selectModality(key, btnEl) {
+      const mod = modalityDetails[key];
+      if (!mod) return;
+      document.querySelectorAll('.modality-card').forEach(function (c) {
+        c.classList.remove('is-active');
+        c.setAttribute('aria-selected', 'false');
+      });
+      if (btnEl) {
+        btnEl.classList.add('is-active');
+        btnEl.setAttribute('aria-selected', 'true');
+      }
+
+      const kicker = document.getElementById('mod-kicker');
+      const title = document.getElementById('mod-title');
+      const desc = document.getElementById('mod-desc');
+      if (kicker) kicker.textContent = mod.kicker;
+      if (title) title.textContent = mod.title;
+      if (desc) desc.textContent = mod.desc;
+    }
+
+    function toggleOptionalSupport(btnEl) {
+      optionalSupportAdded = !optionalSupportAdded;
+      const note = document.getElementById('mod-optional-note');
+      if (btnEl) {
+        btnEl.setAttribute('aria-pressed', optionalSupportAdded ? 'true' : 'false');
+        if (optionalSupportAdded) {
+          btnEl.classList.add('is-active');
+          btnEl.textContent = `Quitar acompañamiento opcional`;
+        } else {
+          btnEl.classList.remove('is-active');
+          btnEl.textContent = `Añadir opcional: acompañamiento 3–6 meses`;
+        }
+      }
+      if (note) {
+        if (optionalSupportAdded) {
+          note.innerHTML = `<strong>Acompañamiento incluido:</strong> seguimiento opcional de 3 a 6 meses tras la consolidación por [X.XXX €/mes] + IVA. Licencias y desplazamientos se acuerdan aparte.`;
+        } else {
+          note.innerHTML = `<strong>Opcional disponible:</strong> acompañamiento de 3 a 6 meses por [X.XXX €/mes] + IVA. Licencias y desplazamientos se acuerdan aparte.`;
+        }
+      }
+    }
+
+    function toggleNextStep(btnEl) {
+      if (!btnEl) return;
+      btnEl.classList.toggle('is-done');
+      const box = btnEl.querySelector('.step-box');
+      if (box) {
+        if (btnEl.classList.contains('is-done')) {
+          box.dataset.orig = box.dataset.orig || box.textContent;
+          box.textContent = `✓`;
+        } else if (box.dataset.orig) {
+          box.textContent = box.dataset.orig;
+        }
+      }
+      const total = document.querySelectorAll('.step-toggle').length;
+      const done = document.querySelectorAll('.step-toggle.is-done').length;
+      const counter = document.getElementById('steps-counter');
+      if (counter) counter.textContent = `${done} de ${total}`;
+    }
+  </script>
+<script>
+(function(){
+  var sel='.pillar-btn,.chain-node,.output-cell,.milestone-step,.commercial-btn,.modality-card,.btn[onclick^="selectFlow"],.step-toggle';
+  function sync(el){
+    if(el.hasAttribute('aria-selected'))el.removeAttribute('aria-selected');
+    var on=el.classList.contains('is-active')||el.classList.contains('is-selected')||el.classList.contains('is-done');
+    var v=on?'true':'false';
+    if(el.getAttribute('aria-pressed')!==v)el.setAttribute('aria-pressed',v);
+  }
+  var mo=new MutationObserver(function(list){list.forEach(function(m){sync(m.target)})});
+  document.querySelectorAll(sel+',.anatomy-block').forEach(function(el){
+    sync(el);mo.observe(el,{attributes:true,attributeFilter:['class','aria-selected']});
+  });
+  document.querySelectorAll('.dossier-panel').forEach(function(p){if(!p.hasAttribute('aria-live'))p.setAttribute('aria-live','polite')});
+  var rowsMo=new MutationObserver(function(list){list.forEach(function(m){var r=m.target;r.classList.contains('is-highlighted')?r.setAttribute('aria-current','true'):r.removeAttribute('aria-current')})});
+  document.querySelectorAll('tr[onclick]').forEach(function(r){
+    r.tabIndex=0;r.setAttribute('aria-label','Resaltar fase: '+r.cells[0].textContent.trim());
+    if(r.classList.contains('is-highlighted'))r.setAttribute('aria-current','true');
+    r.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();r.click()}});
+    rowsMo.observe(r,{attributes:true,attributeFilter:['class']});
+  });
+  document.querySelectorAll('.phase-svg g[onclick]').forEach(function(g){g.setAttribute('aria-hidden','true')});
+})();
+</script>
+<script>
+(function(){
+  var root=document.documentElement,mq=matchMedia('(prefers-color-scheme: dark)');
+  var tb=document.getElementById('themeBtn'),mb=document.getElementById('menuBtn'),ml=document.getElementById('menuList'),bar=document.getElementById('topbar');
+  function dark(){var t=root.getAttribute('data-theme');return t?t==='dark':mq.matches}
+  function paint(){tb.setAttribute('aria-checked',dark()?'true':'false')}
+  try{var sv=localStorage.getItem('weazel-theme');if(sv==='dark'||sv==='light')root.setAttribute('data-theme',sv)}catch(e){}
+  paint();
+  mq.addEventListener&&mq.addEventListener('change',paint);
+  tb.addEventListener('click',function(){var n=dark()?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('weazel-theme',n)}catch(e){}paint()});
+  function close(back){ml.hidden=true;mb.setAttribute('aria-expanded','false');if(back)mb.focus()}
+  mb.addEventListener('click',function(){if(ml.hidden){ml.hidden=false;mb.setAttribute('aria-expanded','true')}else close(false)});
+  ml.addEventListener('click',function(e){if(e.target.closest('a'))close(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!ml.hidden)close(true)});
+  document.addEventListener('click',function(e){if(!ml.hidden&&!e.target.closest('.tb-menu'))close(false)});
+  ml.addEventListener('focusout',function(e){if(!ml.hidden&&!e.relatedTarget||(e.relatedTarget&&!e.relatedTarget.closest('.tb-menu')))close(false)});
+  function h(){root.style.setProperty('--bar-h',bar.offsetHeight+'px')}
+  h();window.addEventListener('resize',h);
+  var ids=[].map.call(ml.querySelectorAll('a'),function(a){return a.getAttribute('href').slice(1)});
+  function mark(id){document.querySelectorAll('.tb-quick a,.tb-list a').forEach(function(a){a.getAttribute('href')==='#'+id?a.setAttribute('aria-current','true'):a.removeAttribute('aria-current')})}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting)mark(x.target.id)})},{rootMargin:'-25% 0px -65% 0px'});
+    ids.forEach(function(i){var el=document.getElementById(i);el&&io.observe(el)});
+  }
+})();
+</script>
+<script>
+(function(){
+  var root=document.documentElement,rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  root.classList.add('js');
+  document.querySelectorAll('.diag svg').forEach(function(v){if(rm&&v.pauseAnimations)v.pauseAnimations()});
+  document.querySelectorAll('.phase-svg rect[fill^="var(--data"]').forEach(function(r,i){r.style.transitionDelay=(i*70)+'ms'});
+  function count(el){
+    var raw=el.textContent,parts=raw.split(/(\d+)/),nums=[];
+    parts.forEach(function(t,i){if(/^\d+$/.test(t))nums.push(i)});
+    if(!nums.length||rm)return;
+    var t0=null,dur=1000;
+    function f(t){if(t0===null)t0=t;var k=Math.min((t-t0)/dur,1),e=1-Math.pow(1-k,3);
+      el.textContent=parts.map(function(x,i){return nums.indexOf(i)>-1?Math.round(+x*e):x}).join('');
+      if(k<1)requestAnimationFrame(f);else el.textContent=raw}
+    requestAnimationFrame(f);
+  }
+  var targets=document.querySelectorAll('.diag,.phase-svg,.milestones-grid,.columns');
+  if(!('IntersectionObserver' in window)){targets.forEach(function(t){t.classList.add('in')});return}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){
+    if(!x.isIntersecting)return;var t=x.target;t.classList.add('in');io.unobserve(t);
+    if(t.classList.contains('columns'))t.querySelectorAll('.kpi-value').forEach(count);
+  })},{threshold:.25});
+  targets.forEach(function(t){io.observe(t)});
+})();
+</script>
+</body>
+</html>
